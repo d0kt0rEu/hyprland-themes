@@ -40,7 +40,7 @@ install_scripts_only() {
 }
 
 install_theme() {
-    local theme_name="${1:-obsidian-pink}"
+    local theme_name="${1:-deep-sea}"
     local theme_path="${REPO_DIR}/themes/${theme_name}"
 
     if [ ! -d "${theme_path}" ]; then
@@ -60,13 +60,13 @@ install_extras() {
     echo "=========================================================="
 
     if [ -d "${REPO_DIR}/extras/jetbrains-theme" ]; then
-        echo "[1/3] Setting up JetBrains Obsidian Pink Theme..."
+        echo "[1/3] Setting up JetBrains IDE Themes..."
         bash "${REPO_DIR}/extras/jetbrains-theme/install.sh" || true
     fi
 
     if [ -d "${REPO_DIR}/extras/limine-theme" ]; then
-        echo "[2/3] Setting up Limine Bootloader Theme..."
-        echo "Limine configuration is available in extras/limine-theme/."
+        echo "[2/3] Setting up Limine Bootloader Themes..."
+        echo "Limine configurations are available in extras/limine-theme/."
         echo "Run 'sudo bash extras/limine-theme/install.sh' if you use Limine bootloader."
     fi
 
@@ -78,8 +78,8 @@ usage() {
     echo "Usage: $0 [OPTION]"
     echo ""
     echo "Options:"
-    echo "  --all                 Perform a complete installation (Obsidian Pink + scripts + extras)"
-    echo "  --theme <name>        Install a specific theme (e.g., obsidian-pink)"
+    echo "  --all [theme]         Perform a complete installation (default: deep-sea)"
+    echo "  --theme <name>        Install a specific theme (e.g., deep-sea, obsidian-pink)"
     echo "  --scripts-only        Install common scripts & keybinds without touching your theme"
     echo "  --extras              Install IDE and bootloader extras"
     echo "  --help                Show this help message"
@@ -92,7 +92,8 @@ if [ "$1" == "--all" ]; then
     print_banner
     backup_configs
     install_scripts_only
-    install_theme "obsidian-pink"
+    SELECTED_THEME="${2:-deep-sea}"
+    install_theme "$SELECTED_THEME"
     install_extras
     exit 0
 elif [ "$1" == "--scripts-only" ]; then
@@ -118,10 +119,10 @@ fi
 print_banner
 echo ""
 echo "Select installation mode:"
-echo "  [1] Full Installation (Obsidian Pink theme + common scripts & keybindings)"
+echo "  [1] Full Installation (Select theme + common scripts & keybindings)"
 echo "  [2] Scripts & Keybinds Only (Preserves your existing theme, CSS & wallpapers)"
 echo "  [3] Theme Only (Choose from available themes)"
-echo "  [4] Extras Only (JetBrains theme, Limine config)"
+echo "  [4] Extras Only (JetBrains themes, Limine configs)"
 echo "  [5] Exit"
 echo ""
 read -rp "Enter choice [1-5]: " choice
@@ -130,8 +131,18 @@ case "$choice" in
     1)
         backup_configs
         install_scripts_only
-        install_theme "obsidian-pink"
-        read -rp "Would you also like to install extras (JetBrains theme, etc.)? [y/N]: " inst_extras
+        echo ""
+        echo "Available themes:"
+        echo "  [1] Deep Sea & Everforest (Oceanic teal & sage green aesthetics)"
+        echo "  [2] Obsidian Pink (Cyberpunk neon hot pink & violet aesthetics)"
+        read -rp "Select theme [1-2, default 1]: " t_choice
+        if [ "$t_choice" == "2" ]; then
+            SELECTED_THEME="obsidian-pink"
+        else
+            SELECTED_THEME="deep-sea"
+        fi
+        install_theme "$SELECTED_THEME"
+        read -rp "Would you also like to install extras (JetBrains themes, Limine, etc.)? [y/N]: " inst_extras
         if [[ "$inst_extras" =~ ^[Yy]$ ]]; then
             install_extras
         fi

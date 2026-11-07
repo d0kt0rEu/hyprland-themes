@@ -1,0 +1,161 @@
+/**
+ * Deep Sea Cyan & Pine Rofi Theme
+ * Keybindings Cheatsheet
+ **/
+
+configuration {
+    show-icons:                 false;
+    click-to-exit:              true;
+    hover-select:               true;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+    font:                       "JetBrainsMono Nerd Font 11";
+}
+
+@import "~/.config/rofi/colors/deepsea.rasi"
+
+* {
+    border-colour:               #7fbbb3;
+    handle-colour:               #83c092;
+    background-colour:           #1e2326fa;
+    foreground-colour:           #d3c6aa;
+    alternate-background:        #272e33;
+    normal-background:           transparent;
+    normal-foreground:           #d3c6aa;
+    urgent-background:           #e67e80;
+    urgent-foreground:           #1e2326;
+    active-background:           #83c092;
+    active-foreground:           #1e2326;
+    selected-normal-background:  #7fbbb3;
+    selected-normal-foreground:  #1e2326;
+}
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       920px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      2px solid;
+    border-radius:               16px;
+    border-color:                #7fbbb3;
+    background-color:            #1e2326fa;
+    cursor:                      "default";
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     20px;
+    border:                      0px solid;
+    border-color:                transparent;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px 0px 6px 0px;
+    padding:                     10px 16px;
+    border:                      1px solid;
+    border-radius:               10px;
+    border-color:                #374247;
+    background-color:            #272e33;
+    text-color:                  #d3c6aa;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  #83c092;
+    font:                        "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  #e2e8e4;
+    cursor:                      text;
+    placeholder:                 "Type to filter shortcut or category...";
+    placeholder-color:           #5c6a72;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       14;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     4px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    background-color:            transparent;
+    text-color:                  #d3c6aa;
+    cursor:                      "default";
+}
+
+element {
+    enabled:                     true;
+    spacing:                     8px;
+    margin:                      0px;
+    padding:                     6px 10px;
+    border:                      0px solid;
+    border-radius:               6px;
+    background-color:            transparent;
+    text-color:                  #d3c6aa;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  #d3c6aa;
+}
+
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  #d3c6aa;
+}
+
+element normal.active {
+    background-color:            #273433;
+    text-color:                  #83c092;
+}
+
+element alternate.active {
+    background-color:            #273433;
+    text-color:                  #83c092;
+}
+
+element selected.normal {
+    background-color:            #7fbbb3;
+    text-color:                  #1e2326;
+}
+
+element selected.active {
+    background-color:            #83c092;
+    text-color:                  #1e2326;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}

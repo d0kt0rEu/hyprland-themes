@@ -1,0 +1,13 @@
+{
+    "layer": "overlay",
+    "exclusive": false,
+    "passthrough": true,
+    "position": "bottom",
+    "margin-bottom": 45,
+    "width": 120,
+    "modules-center": ["custom/layout"],
+    "custom/layout": {
+        "exec": "/home/d0kt0r/.config/waybar/scripts/get-layout.sh",
+        "interval": "once"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "layer": "overlay",
+    "exclusive": false,
+    "passthrough": false,
+    "position": "bottom",
+    "margin-bottom": 60,
+    "modules-center": ["custom/volume"],
+    "custom/volume": {
+        "exec": "/home/d0kt0r/.config/waybar/scripts/get-volume.sh",
+        "signal": 1,
+        "interval": "once",
+        "on-click": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh mute",
+        "on-scroll-up": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh raise",
+        "on-scroll-down": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh lower"
+    }
+}

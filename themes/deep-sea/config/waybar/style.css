@@ -1,0 +1,235 @@
+@import "../omarchy/current/theme/waybar.css";
+
+@define-color background #1e2326;
+@define-color foreground #7fbbb3;
+@define-color pine #83c092;
+@define-color emerald #4ebf72;
+@define-color text #d3c6aa;
+@define-color transparent rgba(0, 0, 0, 0);
+
+* {
+  border: none;
+  border-radius: 1px;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modules-left {
+  margin-left: 14px;
+}
+
+.modules-right {
+  margin-right: 14px;
+}
+
+window#waybar {
+  background-color: alpha(@background, 0.94);
+  border: 2px solid alpha(@foreground, 0.35);
+  transition-property: background-color;
+  transition-duration: .5s;
+  border-radius: 32px;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+}
+#waybar.empty .modules-center {
+  opacity: 0;
+}
+
+#workspaces {
+  padding: 0px 10px;
+  margin: 4px 6px;
+  background: transparent;
+  background-color: transparent;
+  opacity: 0.95;
+}
+
+#workspaces button {
+  color: @foreground;
+  padding: 0 5px;
+  margin: 0 1px;
+  min-width: 14px;
+  font-size: 16px;
+  background: transparent;
+}
+
+#workspaces button.empty {
+  color: @foreground;
+  opacity: 0.35;
+}
+
+#workspaces button.active {
+  transition: all 100ms ease-out;
+  color: @foreground;
+  font-size: 20px;
+  background: transparent;
+  opacity: 1;
+  padding: 0 4px;
+  margin: 0 1px;
+}
+
+#workspaces button.active:hover {
+  background-color: alpha(@background, 0.5);
+  color: @foreground;
+} 
+
+#workspaces button:hover {
+  background-color: transparent;
+}
+
+#workspaces button.empty:hover {
+  border-radius: 18px;
+  background: transparent;
+  opacity: 1;
+}
+
+#battery,
+#pulseaudio,
+#custom-screenrecording-indicator,
+#custom-update {
+  min-width: 16px;
+  margin: 0 10px;
+  color: @text;
+}
+
+#tray {
+  background: transparent;
+  border-radius: 18px;
+  padding: 0px 8px;
+  margin: 4px 4px;
+  margin-right: 8px;
+}
+
+#clock {
+  font-size: 16px;
+  font-weight: 700;
+  color: @foreground;
+}
+
+#pulseaudio {
+  margin-right: 8px;
+  color: @foreground;
+}
+
+#bluetooth {
+  margin-right: 16px;
+  color: @foreground;
+}
+
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  margin-right: 5px;
+  min-width: 18px;
+}
+
+#network {
+  margin-right: 14px;
+  color: @foreground;
+}
+
+#custom-gamemode {
+  margin-right: 12px;
+  color: @pine;
+}
+
+tooltip {
+  background: @background;
+  border: 1px solid alpha(@foreground, 0.4);
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+tooltip label {
+  color: @text;
+  font-size: 14px;
+}
+
+#custom-update {
+  font-size: 13px;
+  color: @pine;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#custom-screenrecording-indicator {
+  min-width: 16px;
+  margin-left: 12px;
+  font-size: 13px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #e67e80;
+}
+
+#custom-omarchy {
+  background: transparent;
+  background-color: transparent;
+  margin: 5px 8px 5px 4px;
+  padding: 0px 4px;
+  font-size: 22px;
+  color: @foreground;
+}
+
+#cpu, #memory {
+  font-size: 26px;      
+  padding: 2px 4px;
+  color: @foreground;
+}
+
+#custom-media-prev,
+#custom-media-play,
+#custom-media-next {
+  color: @foreground;
+  padding: 0 4px;
+  margin: 0 1px;
+  transition: all 0.2s ease-in-out;
+}
+
+#custom-media-next {
+  margin-right: 6px;
+}
+
+#custom-media-prev:hover,
+#custom-media-play:hover,
+#custom-media-next:hover {
+  color: @emerald;
+}
+
+#group-right1,
+#group_right1,
+#right1 {
+  font-weight: 800;
+  background: transparent;
+  padding: 0px 8px;
+  margin: 4px 4px;
+}
+
+#group-center3,
+#group_center3,
+#center3,
+#group-center2,
+#group_center2,
+#center2 {
+  font-weight: 800;
+  background: alpha(@foreground, 0.12);
+  border-radius: 18px;
+  padding: 0px 10px;
+  margin: 4px 4px;
+  color: @text;
+}
+
+#custom-media {
+  color: @pine;
+  font-size: 15px;
+  padding: 0 6px;
+}

@@ -1,0 +1,107 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "/home/d0kt0r/.config/fastfetch/ascii/archlabs.txt",
+    "color": {
+      "1": "38;2;127;187;179",
+      "2": "38;2;131;192;146"
+    },
+    "padding": {
+      "top": 1,
+      "left": 2,
+      "right": 4
+    }
+  },
+  "display": {
+    "separator": "  "
+  },
+  "modules": [
+    {
+      "type": "title",
+      "format": "  \u001b[1;38;2;127;187;179m{user-name}\u001b[0m\u001b[38;2;100;120;115m@\u001b[0m\u001b[1;38;2;131;192;146m{host-name}\u001b[0m"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;79;91;88m╭─ System ──────────────────────────────────────────╮\u001b[0m"
+    },
+    {
+      "type": "os",
+      "key": "│  \u001b[38;2;127;187;179m󰣇 OS\u001b[0m      ",
+      "format": "{name} ({arch})"
+    },
+    {
+      "type": "kernel",
+      "key": "│  \u001b[38;2;127;187;179m Kernel\u001b[0m  ",
+      "format": "{release}"
+    },
+    {
+      "type": "uptime",
+      "key": "│  \u001b[38;2;127;187;179m󱫐 Uptime\u001b[0m  ",
+      "format": "{days}d {hours}h {minutes}m"
+    },
+    {
+      "type": "packages",
+      "key": "│  \u001b[38;2;127;187;179m󰏖 Packages\u001b[0m",
+      "format": "{all} (pacman)"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;79;91;88m├─ Desktop ─────────────────────────────────────────┤\u001b[0m"
+    },
+    {
+      "type": "wm",
+      "key": "│  \u001b[38;2;131;192;146m󱗃 WM\u001b[0m      ",
+      "format": "{pretty-name} (Wayland)"
+    },
+    {
+      "type": "terminal",
+      "key": "│  \u001b[38;2;131;192;146m Terminal\u001b[0m",
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "shell",
+      "key": "│  \u001b[38;2;131;192;146m Shell\u001b[0m   ",
+      "format": "{pretty-name} {version}"
+    },
+    {
+      "type": "display",
+      "key": "│  \u001b[38;2;131;192;146m󰍹 Display\u001b[0m ",
+      "format": "{width}x{height} @ {refresh-rate}Hz"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;79;91;88m├─ Hardware ────────────────────────────────────────┤\u001b[0m"
+    },
+    {
+      "type": "cpu",
+      "key": "│  \u001b[38;2;127;187;179m CPU\u001b[0m     ",
+      "format": "{name} ({cores-physical}C/{cores-logical}T)"
+    },
+    {
+      "type": "gpu",
+      "key": "│  \u001b[38;2;127;187;179m󰊴 GPU\u001b[0m     ",
+      "format": "{name}"
+    },
+    {
+      "type": "memory",
+      "key": "│  \u001b[38;2;131;192;146m Memory\u001b[0m  ",
+      "format": "{used} / {total} ({percentage})"
+    },
+    {
+      "type": "disk",
+      "key": "│  \u001b[38;2;131;192;146m Storage\u001b[0m ",
+      "folders": "/",
+      "format": "{size-used} / {size-total} ({size-percentage})"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;79;91;88m╰───────────────────────────────────────────────────╯\u001b[0m"
+    },
+    {
+      "type": "colors",
+      "paddingLeft": 2,
+      "symbol": "circle"
+    }
+  ]
+}

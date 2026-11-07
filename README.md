@@ -1,7 +1,7 @@
 # 🌌 Hyprland Themes & Modular Arch Dotfiles
 
 <p align="center">
-  <img src="assets/screenshots/waybar-desktop.png" alt="Obsidian Pink Desktop" width="100%">
+  <img src="assets/screenshots/deep-sea/waybar-desktop.png" alt="Deep Sea Desktop" width="100%">
 </p>
 
 <p align="center">
@@ -18,37 +18,57 @@ Switch themes in seconds or take just the functional scripts without touching yo
 
 ---
 
-## 🎨 Featured Theme: Obsidian Pink
+## 🎨 Featured Themes
 
-A high-contrast cyberpunk aesthetic featuring deep obsidian glass surfaces (`#0b0813`), accented with neon hot pink (`#ff3b81`) and violet glowing borders (`#a855f7`).
+### 🌊 1. Deep Sea & Everforest
+A calm, elegant aesthetic inspired by deep oceanic trenches and the Everforest palette. Features deep oceanic obsidian surfaces (`#1E2326`, `#272E33`), soft aquamarine cyan accents (`#7FBBB3`), calm pine/sage greens (`#83C092`), and warm sand highlights (`#D3C6AA`).
 
-| Component | Theme Integration |
+<p align="center">
+  <img src="https://img.shields.io/badge/Base_Dark-%231E2326-1E2326?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Surface-%23272E33-272E33?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Aquamarine-%237FBBB3-7FBBB3?style=for-the-badge&logoColor=black" />
+  <img src="https://img.shields.io/badge/Sage_Pine-%2383C092-83C092?style=for-the-badge&logoColor=black" />
+  <img src="https://img.shields.io/badge/Warm_Sand-%23D3C6AA-D3C6AA?style=for-the-badge&logoColor=black" />
+</p>
+
+| Component | Deep Sea Theme Integration |
 |---|---|
-| **Hyprland** | Lua-based config (`hyprland.lua`), active neon borders, dynamic window opacity toggles |
+| **Hyprland** | Lua-based config (`hyprland.lua`), glowing aquamarine & sage borders, dynamic window opacity toggles |
 | **Waybar** | Floating pill styling, interactive system status indicators & OSD popups |
 | **Rofi** | Custom rounded menus for Application Launcher, Cheatsheet, Wi-Fi, Calculator, and Power Menu |
-| **Lockscreen** | Custom `hyprlock.conf` with cyberpunk clock, battery stats, and avatar styling |
-| **Terminal** | `kitty` color scheme (`cyberpunk-neon.conf`) + `fastfetch` system banner |
-| **GTK & Apps** | Dark GTK-3 CSS styling + `qalculate-gtk` dark neon scheme |
-| **Extras** | Matching JetBrains IDE theme plugin (`Obsidian Pink`) & Limine bootloader theme |
+| **Lockscreen** | Custom `hyprlock.conf` with minimalist clock, battery stats, and avatar styling |
+| **Terminal** | `kitty` color scheme (`deepsea.conf`) + `fastfetch` system banner |
+| **GTK & Apps** | Custom GTK-3 CSS styling + `qalculate-gtk` dark everforest scheme with margin bugfix shim |
+| **Extras** | Matching JetBrains IDE theme plugin (`Deep Sea`) & Limine bootloader theme |
+
+### 🌌 2. Obsidian Pink
+A high-contrast cyberpunk aesthetic featuring deep obsidian glass surfaces (`#0b0813`), accented with neon hot pink (`#ff3b81`) and violet glowing borders (`#a855f7`).
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Base_Dark-%230B0813-0B0813?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Surface-%23120D1C-120D1C?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Neon_Pink-%23FF3B81-FF3B81?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Violet_Glow-%23A855F7-A855F7?style=for-the-badge" />
+</p>
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots (Deep Sea & Everforest)
+
+All screenshots captured with the clean desktop wallpaper background:
 
 <p align="center">
-  <img src="assets/screenshots/app-launcher.png" width="48%" alt="Application Launcher" />
-  <img src="assets/screenshots/wifi-menu.png" width="48%" alt="Wi-Fi Selector" />
+  <img src="assets/screenshots/deep-sea/app-launcher.png" width="48%" alt="Application Launcher" />
+  <img src="assets/screenshots/deep-sea/wifi-menu.png" width="48%" alt="Wi-Fi Selector" />
 </p>
 
 <p align="center">
-  <img src="assets/screenshots/power-menu.png" width="48%" alt="Power Plans & Battery Manager" />
-  <img src="assets/screenshots/calculator.png" width="48%" alt="Quick Calculator" />
+  <img src="assets/screenshots/deep-sea/power-menu.png" width="48%" alt="Power Plans & Battery Manager" />
+  <img src="assets/screenshots/deep-sea/calculator.png" width="48%" alt="Quick Calculator" />
 </p>
 
 <p align="center">
-  <img src="assets/screenshots/fastfetch.png" width="48%" alt="Terminal & Fastfetch Banner" />
-  <img src="assets/screenshots/cheatsheet.png" width="48%" alt="Keybinding Cheatsheet" />
+  <img src="assets/screenshots/deep-sea/cheatsheet.png" width="96%" alt="Keybinding Cheatsheet" />
 </p>
 
 ---
@@ -66,26 +86,29 @@ cd hyprland-themes
 ./install.sh
 ```
 
-The interactive installer will ask you how you'd like to install:
+The interactive installer allows you to choose your theme:
 ```text
 Select installation mode:
-  [1] Full Installation (Obsidian Pink theme + common scripts & keybindings)
+  [1] Full Installation (Select theme + common scripts & keybindings)
   [2] Scripts & Keybinds Only (Preserves your existing theme, CSS & wallpapers)
   [3] Theme Only (Choose from available themes)
-  [4] Extras Only (JetBrains theme, Limine config)
+  [4] Extras Only (JetBrains themes, Limine configs)
   [5] Exit
 ```
 
 Or run non-interactively via flags:
 ```bash
-# Full install of the Obsidian Pink theme & all scripts
-./install.sh --all
+# Full install of the Deep Sea theme & all scripts
+./install.sh --all deep-sea
+
+# Full install of Obsidian Pink theme
+./install.sh --all obsidian-pink
 
 # Only install functional scripts and keybindings (leaves your current theme intact)
 ./install.sh --scripts-only
 
 # Install or switch to a specific theme
-./install.sh --theme obsidian-pink
+./install.sh --theme deep-sea
 
 # Install only JetBrains IDE plugin & bootloader extras
 ./install.sh --extras
@@ -166,7 +189,9 @@ All keybindings are accessible anytime on your desktop by pressing <kbd>Super</k
 ```text
 hyprland-themes/
 ├── assets/
-│   └── screenshots/               # Visual previews for README & documentation
+│   └── screenshots/               # Visual previews for documentation
+│       ├── deep-sea/              # Deep Sea Everforest screenshots
+│       └── obsidian-pink/         # Obsidian Pink Cyberpunk screenshots
 ├── common/
 │   ├── keybinds/                  # Standalone keybind exports (conf, lua, json, md)
 │   ├── scripts/
@@ -174,23 +199,26 @@ hyprland-themes/
 │   │   └── rofi/                  # Functional launcher, cheatsheet, wifi, power, & calc scripts
 │   └── install-scripts.sh         # Installs only functional scripts without touching themes
 ├── extras/
-│   ├── jetbrains-theme/           # Obsidian Pink theme plugin for CLion, RustRover, IDEA
-│   ├── limine-theme/              # Obsidian Pink styling for Limine bootloader
+│   ├── jetbrains-theme/           # JetBrains IDE plugins for CLion, RustRover, IDEA, etc.
+│   │   ├── Deep Sea.icls
+│   │   ├── deepsea-theme.jar
+│   │   ├── Obsidian_Pink.icls
+│   │   └── ObsidianPinkTheme.jar
+│   ├── limine-theme/              # Bootloader themes & wallpapers for Limine
+│   │   ├── deepsea-limine.conf
+│   │   └── obsidian-limine.conf
 │   └── setup-hyprlock-login.sh    # Instant Hyprlock lockscreen on autologin
 ├── themes/
-│   └── obsidian-pink/             # The Obsidian Pink theme package
-│       ├── config/                # Modular config directory overrides
-│       │   ├── fastfetch/
-│       │   ├── fuzzel/
-│       │   ├── gtk-3.0/
-│       │   ├── hypr/
-│       │   ├── kitty/
-│       │   ├── qalculate/
-│       │   ├── rofi/
-│       │   └── waybar/
-│       ├── wallpapers/            # High-res wallpapers for this theme
-│       ├── theme.json             # Theme metadata & color palette definition
-│       └── install.sh             # Independent installer for this theme
+│   ├── deep-sea/                  # Deep Sea & Everforest Theme
+│   │   ├── config/                # Modular configs (hypr, waybar, rofi, kitty, qalculate...)
+│   │   ├── wallpapers/            # High-resolution Everforest & Oceanic wallpapers
+│   │   ├── theme.json             # Theme metadata & color palette definition
+│   │   └── install.sh             # Independent installer for Deep Sea
+│   └── obsidian-pink/             # Obsidian Pink Cyberpunk Theme
+│       ├── config/
+│       ├── wallpapers/
+│       ├── theme.json
+│       └── install.sh
 ├── install.sh                     # Master interactive installation script
 ├── restore.sh                     # Quick restore script for recovery or syncing
 ├── LICENSE                        # MIT License
@@ -213,14 +241,14 @@ The repository is built to support an arbitrary number of themes. To add your ow
    - `waybar/` (`style.css`, `config.jsonc`, pill css files)
    - `rofi/` (`colors/`, `style-1.rasi`)
    - `kitty/` (`theme.conf`, `kitty.conf`)
-3. Add a `theme.json` describing your theme and an `install.sh` script (you can copy `themes/obsidian-pink/install.sh` as a template).
+3. Add a `theme.json` describing your theme and an `install.sh` script (you can copy `themes/deep-sea/install.sh` as a template).
 4. Run `./install.sh` — your new theme will automatically appear in the interactive menu!
 
 ---
 
 ## 📦 Dependencies
 
-Install the core dependencies on Arch Linux via `pacman` and `yay`:
+Install the core dependencies on Arch Linux via `pacman`:
 
 ```bash
 # Core window manager & desktop bar
