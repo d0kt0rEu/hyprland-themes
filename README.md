@@ -47,7 +47,8 @@ A high-contrast cyberpunk aesthetic featuring deep obsidian glass surfaces (`#0b
 </p>
 
 <p align="center">
-  <img src="assets/screenshots/cheatsheet.png" width="96%" alt="Keybinding Cheatsheet" />
+  <img src="assets/screenshots/fastfetch.png" width="48%" alt="Terminal & Fastfetch Banner" />
+  <img src="assets/screenshots/cheatsheet.png" width="48%" alt="Keybinding Cheatsheet" />
 </p>
 
 ---

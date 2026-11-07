@@ -528,6 +528,15 @@ hl.window_rule({
 	float = true,
 })
 
+-- Fastfetch showcase windowrule
+hl.window_rule({
+	name = "float-fastfetch",
+	match = { class = "fastfetch-showcase" },
+	float = true,
+	center = true,
+	size = "1050 720",
+})
+
 -- Qalculate calculator windowrule
 hl.window_rule({
 	name = "float-qalculate",
