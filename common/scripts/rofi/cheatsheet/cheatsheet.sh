@@ -51,7 +51,9 @@ for item in "${ENTRIES[@]}"; do
     IFS="|" read -r key desc cat cmd <<< "$item"
     pad_key=$(printf "%-26s" "$key")
     pad_desc=$(printf "%-42s" "$desc")
-    line="<span weight='bold' color='#ff79c6'>${pad_key}</span> <span color='#6272a4'>│</span> <span color='#f1eef8'>${pad_desc}</span> <span color='#bd93f9'>${cat}</span>"
+    clean_key="${pad_key//&/&amp;}"
+    clean_desc="${pad_desc//&/&amp;}"
+    line="<span weight='bold' color='#ff79c6'>${clean_key}</span> <span color='#6272a4'>│</span> <span color='#f1eef8'>${clean_desc}</span> <span color='#bd93f9'>${cat}</span>"
     MENU_LINES+=("$line")
 done
 
