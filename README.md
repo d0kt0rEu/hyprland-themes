@@ -48,7 +48,7 @@ A high-contrast cyberpunk aesthetic featuring deep obsidian glass surfaces (`#0b
 
 <p align="center">
   <img src="assets/screenshots/app-launcher.png" width="48%" alt="Rofi Launcher" />
-  <img src="assets/screenshots/network-pill.png" width="48%" alt="Interactive Status Menu" />
+  <img src="assets/screenshots/battery-menu.png" width="48%" alt="Battery & Power Menu" />
 </p>
 
 ---

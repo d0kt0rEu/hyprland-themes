@@ -30,7 +30,7 @@ except Exception:
 # Get saved connections
 try:
     saved_conns = set(subprocess.check_output(["nmcli", "-t", "-f", "NAME,TYPE", "connection", "show"]).decode().splitlines())
-    saved_ssids = {c.split(":")[0] for c in saved_conns if c.endswith(":802-11-wireless")}
+    saved_ssids = {c.split(":")[0] for c in saved_conns if c.endswith(":802-11-wireless") or c.endswith(":wifi")}
 except Exception:
     saved_ssids = set()
 
@@ -157,40 +157,54 @@ ssid = selected_data["ssid"]
 bssid = selected_data["bssid"]
 is_open = selected_data["is_open"]
 is_connected = selected_data["is_connected"]
+target = ssid if ssid else bssid
 
 if is_connected:
     subprocess.run(["notify-send", "📶 Wi-Fi", f"Already connected to {ssid}"])
     sys.exit(0)
 
-# Check if network is saved or open
-is_saved = (ssid in saved_ssids)
-
-if is_saved or is_open:
-    subprocess.run(["notify-send", "📶 Wi-Fi", f"Connecting to {ssid}..."])
-    res = subprocess.run(["nmcli", "device", "wifi", "connect", bssid])
-    if res.returncode == 0:
-        subprocess.run(["notify-send", "📶 Wi-Fi Connected", f"Connected to {ssid}"])
-    else:
-        subprocess.run(["notify-send", "-u", "critical", "⚠️ Wi-Fi Error", f"Failed to connect to {ssid}"])
-else:
-    # Needs password! Launch password prompt
-    subprocess.Popen([
-        "bash", "-c",
-        f"sleep 0.1; PID=$(pgrep -x rofi | head -n 1); [ -n \"$PID\" ] && {click_helper} $PID"
-    ])
-    theme_str = f'entry {{ placeholder: "Enter password for {ssid}..."; }}'
+def prompt_password_and_connect():
+    theme_str = f'window {{ width: 440px; }} mainbox {{ children: [ "inputbar" ]; }} entry {{ placeholder: "Enter password for {ssid}..."; }} listview {{ enabled: false; }}'
     pass_proc = subprocess.run(
         ["rofi", "-dmenu", "-password", "-p", "󰌾 Password", "-theme-str", theme_str, "-theme", THEME],
-        stdout=subprocess.PIPE
+        stdout=subprocess.PIPE,
+        text=True
     )
-    password = pass_proc.stdout.decode("utf-8").strip()
-
+    password = pass_proc.stdout.strip()
     if not password:
         sys.exit(0)
 
     subprocess.run(["notify-send", "📶 Wi-Fi", f"Connecting to {ssid}..."])
-    res = subprocess.run(["nmcli", "device", "wifi", "connect", bssid, "password", password])
+    res = subprocess.run(
+        ["nmcli", "device", "wifi", "connect", target, "password", password],
+        capture_output=True,
+        text=True
+    )
     if res.returncode == 0:
         subprocess.run(["notify-send", "📶 Wi-Fi Connected", f"Connected to {ssid}"])
     else:
-        subprocess.run(["notify-send", "-u", "critical", "⚠️ Wi-Fi Error", f"Failed to connect to {ssid} (incorrect password?)"])
+        err = res.stderr.strip() or "Connection failed"
+        subprocess.run(["notify-send", "-u", "critical", "⚠️ Wi-Fi Error", f"Failed to connect to {ssid}:\n{err}"])
+
+# Check if network is saved or open
+is_saved = (ssid in saved_ssids)
+
+if is_open:
+    subprocess.run(["notify-send", "📶 Wi-Fi", f"Connecting to {ssid}..."])
+    res = subprocess.run(["nmcli", "device", "wifi", "connect", target], capture_output=True, text=True)
+    if res.returncode == 0:
+        subprocess.run(["notify-send", "📶 Wi-Fi Connected", f"Connected to {ssid}"])
+    else:
+        err = res.stderr.strip() or "Connection failed"
+        subprocess.run(["notify-send", "-u", "critical", "⚠️ Wi-Fi Error", f"Failed to connect to {ssid}:\n{err}"])
+elif is_saved:
+    subprocess.run(["notify-send", "📶 Wi-Fi", f"Connecting to saved network {ssid}..."])
+    res = subprocess.run(["nmcli", "connection", "up", ssid], capture_output=True, text=True)
+    if res.returncode == 0:
+        subprocess.run(["notify-send", "📶 Wi-Fi Connected", f"Connected to {ssid}"])
+    else:
+        # If saved connection fails (e.g. password changed), ask for password
+        prompt_password_and_connect()
+else:
+    # Unsaved secured network: ask for password
+    prompt_password_and_connect()
