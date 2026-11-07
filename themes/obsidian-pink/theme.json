@@ -1,0 +1,29 @@
+{
+  "name": "Obsidian Pink",
+  "id": "obsidian-pink",
+  "version": "1.0.0",
+  "author": "d0kt0rEu",
+  "description": "Cyberpunk Neon & Deep Obsidian aesthetics for Arch Linux Hyprland. Features glowing hot pink and violet accents on deep obsidian black surfaces.",
+  "colors": {
+    "background": "#0b0813",
+    "surface": "#120d1c",
+    "accent_primary": "#ff3b81",
+    "accent_secondary": "#a855f7",
+    "accent_glow": "#ff007f",
+    "text_primary": "#ffffff",
+    "text_secondary": "#b4a0c8"
+  },
+  "components": [
+    "hyprland",
+    "waybar",
+    "rofi",
+    "kitty",
+    "fastfetch",
+    "fuzzel",
+    "gtk-3.0",
+    "qalculate",
+    "hyprlock",
+    "hyprpaper"
+  ],
+  "default_wallpaper": "a_mountain_with_trees_and_moon.jpg"
+}

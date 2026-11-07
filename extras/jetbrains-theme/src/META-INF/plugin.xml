@@ -1,0 +1,21 @@
+<idea-plugin>
+    <id>com.obsidianpink.cyberpunk.theme</id>
+    <name>Obsidian Pink Cyberpunk</name>
+    <version>1.0.0</version>
+    <vendor email="d0kt0r@arch" url="https://github.com/d0kt0r">Obsidian Cyberpunk</vendor>
+    <idea-version since-build="201.0" />
+    <description><![CDATA[
+        <h1>Obsidian Pink Cyberpunk Theme</h1>
+        <p>A sleek, high-contrast dark theme inspired by Obsidian Cyberpunk aesthetics.</p>
+        <ul>
+            <li>Deep obsidian black backgrounds (<code>#0f0c16</code>)</li>
+            <li>Vibrant neon cyber pink accents (<code>#ff2a85</code>)</li>
+            <li>Electric purple highlights (<code>#bd93f9</code>)</li>
+            <li>Full support for RustRover, CLion, IntelliJ IDEA, PyCharm, WebStorm, GoLand, and all JetBrains IDEs.</li>
+        </ul>
+    ]]></description>
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <themeProvider id="com.obsidianpink.cyberpunk.theme" path="/theme/ObsidianPink.theme.json"/>
+    </extensions>
+</idea-plugin>

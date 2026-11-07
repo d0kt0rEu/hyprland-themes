@@ -1,0 +1,137 @@
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: #0f0c16;
+}
+
+window#waybar.hidden {
+  opacity: 0;
+  background-color: transparent;
+}
+
+#workspaces {
+  background-color: transparent;
+}
+
+#workspaces button {
+  min-width: 0;
+  box-shadow: inset 0 -3px transparent;
+  padding: 6px 18px;
+  margin: 6px 3px;
+  border-radius: 4px;
+  background-color: #1a1528;
+  color: #bd93f9;
+}
+
+#workspaces button.active {
+  color: #0f0c16;
+  background-color: #ff79c6;
+  font-weight: bold;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: #0f0c16;
+  background-color: #bd93f9;
+}
+
+#workspaces button.urgent {
+  background-color: #ff5555;
+  color: #ffffff;
+}
+
+#memory,
+#custom-power,
+#battery,
+#backlight,
+#wireplumber,
+#network,
+#clock,
+#tray {
+  border-radius: 4px;
+  margin: 6px 3px;
+  padding: 6px 12px;
+  background-color: #1a1528;
+  color: #0f0c16;
+}
+
+#custom-power {
+  margin-right: 6px;
+}
+
+#custom-logo {
+  padding-right: 7px;
+  padding-left: 7px;
+  margin-left: 5px;
+  font-size: 15px;
+  border-radius: 8px 0px 0px 8px;
+  color: #ff2a85;
+}
+
+#memory {
+  background-color: #e0aaff;
+  color: #0f0c16;
+}
+
+#battery {
+  background-color: #ff2a85;
+  color: #ffffff;
+}
+
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+  background-color: #ff0055;
+  color: #ffffff;
+}
+
+#battery.charging {
+  background-color: #ff52a5;
+  color: #ffffff;
+}
+
+#backlight {
+  background-color: #c77dff;
+  color: #0f0c16;
+}
+
+#wireplumber {
+  background-color: #ff79c6;
+  color: #0f0c16;
+}
+
+#network {
+  background-color: #9d4edd;
+  color: #ffffff;
+  padding-right: 17px;
+}
+
+#clock {
+  font-family: JetBrainsMono Nerd Font;
+  background-color: #bd93f9;
+  color: #0f0c16;
+}
+
+#custom-power {
+  background-color: #ff0055;
+  color: #ffffff;
+}
+
+tooltip {
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #0f0c16;
+}
+
+tooltip label {
+  padding: 5px;
+  background-color: #0f0c16;
+  color: #f1eef8;
+}

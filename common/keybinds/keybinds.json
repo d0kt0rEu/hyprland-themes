@@ -1,0 +1,275 @@
+{
+  "system": "Hyprland",
+  "mainMod": "SUPER",
+  "keybinds": [
+    {
+      "key": "SUPER + Q",
+      "action": "Open Terminal (kitty)",
+      "command": "kitty",
+      "category": "Apps"
+    },
+    {
+      "key": "SUPER + C",
+      "action": "Close Focused Window",
+      "dispatcher": "hl.dsp.window.close()",
+      "command": "hyprctl dispatch killactive",
+      "category": "Window"
+    },
+    {
+      "key": "SUPER + M",
+      "action": "System Power Menu",
+      "command": "/home/d0kt0r/.config/rofi/powermenu/type-2/powermenu.sh",
+      "category": "System"
+    },
+    {
+      "key": "SUPER + B",
+      "action": "Toggle Topbar (Waybar hide/unhide)",
+      "command": "killall -SIGUSR1 waybar",
+      "category": "System"
+    },
+    {
+      "key": "SUPER + E",
+      "action": "Open File Manager (dolphin)",
+      "command": "dolphin",
+      "category": "Apps"
+    },
+    {
+      "key": "SUPER + R",
+      "action": "Application Launcher (rofi)",
+      "command": "/home/d0kt0r/.config/rofi/launcher.sh",
+      "category": "Apps"
+    },
+    {
+      "key": "SUPER + K",
+      "action": "Keybindings Cheatsheet",
+      "command": "/home/d0kt0r/.config/rofi/cheatsheet/cheatsheet.sh",
+      "category": "Apps"
+    },
+    {
+      "key": "SUPER + =",
+      "action": "Quick Calculator (rofi qalc)",
+      "command": "/home/d0kt0r/.config/rofi/calc.sh",
+      "category": "Apps"
+    },
+    {
+      "key": "XF86Calculator",
+      "action": "Quick Calculator (rofi qalc)",
+      "command": "/home/d0kt0r/.config/rofi/calc.sh",
+      "category": "Apps"
+    },
+    {
+      "key": "SUPER + T",
+      "action": "Toggle Floating (Single Window)",
+      "dispatcher": "hl.dsp.window.float({ action = 'toggle' })",
+      "command": "hyprctl dispatch togglefloating",
+      "category": "Window"
+    },
+    {
+      "key": "SUPER + V",
+      "action": "Toggle Floating (All Windows on Workspace)",
+      "category": "Window"
+    },
+    {
+      "key": "SUPER + F",
+      "action": "Toggle Fullscreen (Maximized)",
+      "dispatcher": "hl.dsp.window.fullscreen({ mode = 'maximized' })",
+      "command": "hyprctl dispatch fullscreen 1",
+      "category": "Window"
+    },
+    {
+      "key": "SUPER + P",
+      "action": "Toggle Pseudo Tiling",
+      "dispatcher": "hl.dsp.window.pseudo()",
+      "command": "hyprctl dispatch pseudo",
+      "category": "Window"
+    },
+    {
+      "key": "SUPER + J",
+      "action": "Toggle Split (Dwindle)",
+      "dispatcher": "hl.dsp.layout('togglesplit')",
+      "command": "hyprctl dispatch togglesplit",
+      "category": "Window"
+    },
+    {
+      "key": "SUPER + Space",
+      "action": "Switch Keyboard Layout (OSD)",
+      "command": "/home/d0kt0r/.config/waybar/scripts/lang-osd.sh",
+      "category": "System"
+    },
+    {
+      "key": "SUPER + Left",
+      "action": "Focus Left Window",
+      "dispatcher": "hl.dsp.focus({ direction = 'left' })",
+      "category": "Navigation"
+    },
+    {
+      "key": "SUPER + Right",
+      "action": "Focus Right Window",
+      "dispatcher": "hl.dsp.focus({ direction = 'right' })",
+      "category": "Navigation"
+    },
+    {
+      "key": "SUPER + Up",
+      "action": "Focus Up Window",
+      "dispatcher": "hl.dsp.focus({ direction = 'up' })",
+      "category": "Navigation"
+    },
+    {
+      "key": "SUPER + Down",
+      "action": "Focus Down Window",
+      "dispatcher": "hl.dsp.focus({ direction = 'down' })",
+      "category": "Navigation"
+    },
+    {
+      "key": "SUPER + Shift + Right",
+      "action": "Resize Window Width +20px",
+      "category": "Window"
+    },
+    {
+      "key": "SUPER + Shift + Left",
+      "action": "Resize Window Width -20px",
+      "category": "Window"
+    },
+    {
+      "key": "SUPER + Shift + Up",
+      "action": "Resize Window Height -20px",
+      "category": "Window"
+    },
+    {
+      "key": "SUPER + Shift + Down",
+      "action": "Resize Window Height +20px",
+      "category": "Window"
+    },
+    {
+      "key": "SUPER + 1 .. 9",
+      "action": "Switch to Workspace 1..9",
+      "category": "Workspaces"
+    },
+    {
+      "key": "SUPER + Shift + 1 .. 9",
+      "action": "Move Focused Window to Workspace 1..9",
+      "category": "Workspaces"
+    },
+    {
+      "key": "SUPER + S",
+      "action": "Toggle Scratchpad (Special Workspace 'magic')",
+      "dispatcher": "hl.dsp.workspace.toggle_special('magic')",
+      "command": "hyprctl dispatch togglespecialworkspace magic",
+      "category": "Workspaces"
+    },
+    {
+      "key": "SUPER + Shift + S",
+      "action": "Move Focused Window to Scratchpad",
+      "dispatcher": "hl.dsp.window.move({ workspace = 'special:magic' })",
+      "command": "hyprctl dispatch movetoworkspace special:magic",
+      "category": "Workspaces"
+    },
+    {
+      "key": "SUPER + Mouse Scroll Up/Down",
+      "action": "Cycle Active Workspace Next / Previous",
+      "category": "Workspaces"
+    },
+    {
+      "key": "SUPER + Left Mouse Drag",
+      "action": "Move Floating Window",
+      "category": "Mouse"
+    },
+    {
+      "key": "SUPER + Right Mouse Drag",
+      "action": "Resize Floating Window",
+      "category": "Mouse"
+    },
+    {
+      "key": "Ctrl + Alt + Up",
+      "action": "Increase Window Opacity (+5%, Hold to Repeat)",
+      "category": "Transparency"
+    },
+    {
+      "key": "Ctrl + Alt + Down",
+      "action": "Decrease Window Opacity (-5%, Hold to Repeat)",
+      "category": "Transparency"
+    },
+    {
+      "key": "Ctrl + Alt + Enter",
+      "action": "Reset Focused Window Opacity to 100%",
+      "category": "Transparency"
+    },
+    {
+      "key": "Ctrl + Alt + \\",
+      "action": "Reset All Windows Opacity to 100%",
+      "category": "Transparency"
+    },
+    {
+      "key": "Print",
+      "action": "Screenshot Selected Area to Clipboard",
+      "command": "grim -g \"$(slurp)\" - | wl-copy",
+      "category": "Screenshot"
+    },
+    {
+      "key": "Shift + Print",
+      "action": "Screenshot Selected Area to Swappy Editor",
+      "command": "grim -g \"$(slurp)\" - | swappy -f -",
+      "category": "Screenshot"
+    },
+    {
+      "key": "XF86AudioRaiseVolume",
+      "action": "Raise Volume +5% (with OSD)",
+      "command": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh raise",
+      "category": "Media"
+    },
+    {
+      "key": "XF86AudioLowerVolume",
+      "action": "Lower Volume -5% (with OSD)",
+      "command": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh lower",
+      "category": "Media"
+    },
+    {
+      "key": "XF86AudioMute",
+      "action": "Toggle Audio Mute (with OSD)",
+      "command": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh mute",
+      "category": "Media"
+    },
+    {
+      "key": "XF86AudioMicMute",
+      "action": "Toggle Microphone Mute (with OSD)",
+      "command": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh mic-mute",
+      "category": "Media"
+    },
+    {
+      "key": "XF86MonBrightnessUp",
+      "action": "Increase Brightness +5% (with OSD)",
+      "command": "/home/d0kt0r/.config/waybar/scripts/brightness-osd.sh up",
+      "category": "Hardware"
+    },
+    {
+      "key": "XF86MonBrightnessDown",
+      "action": "Decrease Brightness -5% (with OSD)",
+      "command": "/home/d0kt0r/.config/waybar/scripts/brightness-osd.sh down",
+      "category": "Hardware"
+    },
+    {
+      "key": "XF86AudioNext",
+      "action": "Next Track",
+      "command": "playerctl next",
+      "category": "Media"
+    },
+    {
+      "key": "XF86AudioPrev",
+      "action": "Previous Track",
+      "command": "playerctl previous",
+      "category": "Media"
+    },
+    {
+      "key": "XF86AudioPlay",
+      "action": "Play / Pause",
+      "command": "playerctl play-pause",
+      "category": "Media"
+    },
+    {
+      "key": "XF86AudioPause",
+      "action": "Play / Pause",
+      "command": "playerctl play-pause",
+      "category": "Media"
+    }
+  ]
+}

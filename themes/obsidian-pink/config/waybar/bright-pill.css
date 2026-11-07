@@ -1,0 +1,22 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    box-shadow: none;
+    border: none;
+}
+
+window#waybar {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#custom-brightness {
+    background: rgba(16, 14, 23, 0.72);
+    color: #ffffff;
+    border: 2px solid #bd93f9;
+    border-radius: 60px;
+    padding: 10px 28px;
+    box-shadow: none;
+}

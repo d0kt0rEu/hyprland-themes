@@ -1,0 +1,133 @@
+/* Obsidian Cyberpunk GTK-3 Theme */
+
+@define-color theme_bg_color #0f0c16;
+@define-color theme_fg_color #f1eef8;
+@define-color theme_base_color #14101e;
+@define-color theme_text_color #f1eef8;
+@define-color theme_selected_bg_color #bd93f9;
+@define-color theme_selected_fg_color #0f0c16;
+@define-color borders #3d2f5a;
+
+/* Base background */
+window, .background {
+    background-color: #0f0c16;
+    color: #f1eef8;
+}
+
+/* Menubar */
+menubar {
+    background-color: #0f0c16;
+    color: #f1eef8;
+    border-bottom: 1px solid #231b36;
+}
+
+menubar > menuitem {
+    padding: 4px 8px;
+    color: #c0b5dc;
+}
+
+menubar > menuitem:hover {
+    background-color: #241b3a;
+    color: #ff2a85;
+}
+
+menu {
+    background-color: #14101f;
+    border: 1px solid #bd93f9;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+menu menuitem {
+    color: #f1eef8;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+menu menuitem:hover {
+    background-color: #bd93f9;
+    color: #0f0c16;
+}
+
+/* Text entries and display */
+entry, textview, textview text {
+    background-color: #161224;
+    background-image: none;
+    color: #f1eef8;
+    border: 1px solid #3d2f5a;
+    border-radius: 8px;
+    caret-color: #ff2a85;
+    padding: 6px;
+}
+
+entry:focus {
+    border-color: #bd93f9;
+    box-shadow: 0 0 4px #bd93f988;
+}
+
+/* Keypad and standard buttons */
+button {
+    background-color: #1a142c;
+    background-image: none;
+    color: #f1eef8;
+    border: 1px solid #362952;
+    border-radius: 6px;
+    box-shadow: none;
+    text-shadow: none;
+    transition: all 120ms ease;
+}
+
+button:hover {
+    background-color: #2b1f47;
+    background-image: none;
+    border-color: #bd93f9;
+    color: #ff2a85;
+}
+
+button:active, button:checked {
+    background-color: #bd93f9;
+    background-image: none;
+    border-color: #ff2a85;
+    color: #0f0c16;
+}
+
+/* Special highlight for suggested action buttons */
+button.suggested-action, button.default {
+    background-color: #ff2a85;
+    background-image: none;
+    border-color: #bd93f9;
+    color: #ffffff;
+}
+
+button.suggested-action:hover, button.default:hover {
+    background-color: #ff489c;
+    background-image: none;
+}
+
+/* Comboboxes / Dropdowns */
+combobox button {
+    background-color: #1a142c;
+    background-image: none;
+    border: 1px solid #362952;
+    color: #f1eef8;
+}
+
+combobox button:hover {
+    border-color: #bd93f9;
+    color: #bd93f9;
+}
+
+/* Labels and status */
+label {
+    color: #e2daf0;
+}
+
+/* Scrollbars */
+scrollbar slider {
+    background-color: #362952;
+    border-radius: 4px;
+}
+
+scrollbar slider:hover {
+    background-color: #bd93f9;
+}
