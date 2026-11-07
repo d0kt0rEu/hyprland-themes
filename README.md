@@ -47,8 +47,7 @@ A high-contrast cyberpunk aesthetic featuring deep obsidian glass surfaces (`#0b
 </p>
 
 <p align="center">
-  <img src="assets/screenshots/cheatsheet.png" width="48%" alt="Keybinding Cheatsheet" />
-  <img src="assets/screenshots/powermenu.png" width="48%" alt="System Power Menu" />
+  <img src="assets/screenshots/cheatsheet.png" width="96%" alt="Keybinding Cheatsheet" />
 </p>
 
 ---
