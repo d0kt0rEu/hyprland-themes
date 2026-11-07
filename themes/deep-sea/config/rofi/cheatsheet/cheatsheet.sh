@@ -11,13 +11,13 @@ THEME="$HOME/.config/rofi/cheatsheet/cheatsheet.rasi"
 ENTRIES=(
     "Super + Q|Open Terminal (Kitty)|[Apps]|kitty"
     "Super + E|Open File Manager (Dolphin)|[Apps]|dolphin"
-    "Super + W|Wallpaper Switcher (Rofi)|[System]|/home/d0kt0r/.local/bin/wall-switch"
-    "Super + R|Application Launcher (Rofi)|[Apps]|/home/d0kt0r/.config/rofi/launcher.sh"
+    "Super + W|Wallpaper Switcher (Rofi)|[System]|$HOME/.local/bin/wall-switch"
+    "Super + R|Application Launcher (Rofi)|[Apps]|$HOME/.config/rofi/launcher.sh"
     "Super + =|Quick Calculator Bar (Rofi)|[Apps]|rofi -show qalc"
     "Super + K|Keybindings Cheatsheet|[Apps]|"
-    "Super + Space|Switch Keyboard Layout (OSD)|[System]|/home/d0kt0r/.config/waybar/scripts/lang-osd.sh"
+    "Super + Space|Switch Keyboard Layout (OSD)|[System]|$HOME/.config/waybar/scripts/lang-osd.sh"
     "Super + B|Toggle Topbar (Hide/Unhide Waybar)|[System]|killall -SIGUSR1 waybar"
-    "Super + M|System Power Menu|[System]|/home/d0kt0r/.config/rofi/powermenu/type-2/powermenu.sh"
+    "Super + M|System Power Menu|[System]|$HOME/.config/rofi/powermenu/type-2/powermenu.sh"
     "Super + C|Close Focused Window|[Window]|hyprctl dispatch killactive"
     "Super + T|Toggle Floating (Single Window)|[Window]|hyprctl dispatch togglefloating"
     "Super + V|Toggle Floating (All on Workspace)|[Window]|"
@@ -51,7 +51,9 @@ for item in "${ENTRIES[@]}"; do
     IFS="|" read -r key desc cat cmd <<< "$item"
     pad_key=$(printf "%-26s" "$key")
     pad_desc=$(printf "%-42s" "$desc")
-    line="<span weight='bold' color='#7fbbb3'>${pad_key}</span> <span color='#4f5b58'>│</span> <span color='#d3c6aa'>${pad_desc}</span> <span color='#83c092'>${cat}</span>"
+    clean_key="${pad_key//&/&amp;}"
+    clean_desc="${pad_desc//&/&amp;}"
+    line="<span weight='bold' color='#7fbbb3'>${clean_key}</span> <span color='#4f5b58'>│</span> <span color='#d3c6aa'>${clean_desc}</span> <span color='#83c092'>${cat}</span>"
     MENU_LINES+=("$line")
 done
 

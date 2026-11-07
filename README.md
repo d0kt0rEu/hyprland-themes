@@ -1,7 +1,8 @@
 # 🌌 Hyprland Themes & Modular Arch Dotfiles
 
 <p align="center">
-  <img src="assets/screenshots/deep-sea/waybar-desktop.png" alt="Deep Sea Desktop" width="100%">
+  <img src="assets/screenshots/deep-sea/waybar-desktop.png" alt="Deep Sea Desktop" width="49%">
+  <img src="assets/screenshots/obsidian-pink/waybar-desktop.png" alt="Obsidian Pink Desktop" width="49%">
 </p>
 
 <p align="center">
@@ -51,11 +52,21 @@ A high-contrast cyberpunk aesthetic featuring deep obsidian glass surfaces (`#0b
   <img src="https://img.shields.io/badge/Violet_Glow-%23A855F7-A855F7?style=for-the-badge" />
 </p>
 
+| Component | Obsidian Pink Theme Integration |
+|---|---|
+| **Hyprland** | Lua-based config (`hyprland.lua`), active neon pink & violet glowing borders, dynamic opacity toggles |
+| **Waybar** | Floating pill styling, interactive system status indicators & OSD popups |
+| **Rofi** | Custom rounded menus for Application Launcher, Cheatsheet, Wi-Fi, Calculator, and Power Menu |
+| **Lockscreen** | Custom `hyprlock.conf` with cyberpunk clock, battery stats, and avatar styling |
+| **Terminal** | `kitty` color scheme (`cyberpunk-neon.conf`) + `fastfetch` system banner |
+| **GTK & Apps** | Dark Obsidian GTK-3 CSS styling + `qalculate-gtk` dark neon scheme with margin bugfix shim |
+| **Extras** | Matching JetBrains IDE theme plugin (`Obsidian Pink`) & Limine bootloader theme |
+
 ---
 
-## 📸 Screenshots (Deep Sea & Everforest)
+## 📸 Screenshots
 
-All screenshots captured with the clean desktop wallpaper background:
+### 🌊 Deep Sea & Everforest
 
 <p align="center">
   <img src="assets/screenshots/deep-sea/app-launcher.png" width="48%" alt="Application Launcher" />
@@ -69,6 +80,23 @@ All screenshots captured with the clean desktop wallpaper background:
 
 <p align="center">
   <img src="assets/screenshots/deep-sea/cheatsheet.png" width="96%" alt="Keybinding Cheatsheet" />
+</p>
+
+### 🌌 Obsidian Pink
+
+<p align="center">
+  <img src="assets/screenshots/obsidian-pink/app-launcher.png" width="48%" alt="Application Launcher" />
+  <img src="assets/screenshots/obsidian-pink/wifi-menu.png" width="48%" alt="Wi-Fi Selector" />
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/obsidian-pink/power-menu.png" width="48%" alt="Power Plans & Battery Manager" />
+  <img src="assets/screenshots/obsidian-pink/calculator.png" width="48%" alt="Quick Calculator" />
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/obsidian-pink/fastfetch.png" width="48%" alt="Terminal & Fastfetch Banner" />
+  <img src="assets/screenshots/obsidian-pink/cheatsheet.png" width="48%" alt="Keybinding Cheatsheet" />
 </p>
 
 ---

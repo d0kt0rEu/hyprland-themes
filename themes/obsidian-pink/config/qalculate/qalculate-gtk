@@ -1,0 +1,4 @@
+#!/bin/bash
+export G_RESOURCE_OVERLAYS="/qalculate-gtk/ui=${HOME}/.config/qalculate/ui"
+export LD_PRELOAD="${HOME}/.local/lib/libqalc_fix.so${LD_PRELOAD:+:$LD_PRELOAD}"
+exec /usr/bin/qalculate-gtk "$@"
