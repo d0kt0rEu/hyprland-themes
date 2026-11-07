@@ -17,6 +17,7 @@ ENTRIES=(
     "Super + Space|Switch Keyboard Layout (OSD)|[System]|$HOME/.config/waybar/scripts/lang-osd.sh"
     "Super + B|Toggle Topbar (Hide/Unhide Waybar)|[System]|killall -SIGUSR1 waybar"
     "Super + M|System Power Menu|[System]|$HOME/.config/rofi/powermenu/type-2/powermenu.sh"
+    "Click Battery|Power Plans & Battery Options|[System]|$HOME/.config/rofi/power/power.sh"
     "Super + C|Close Focused Window|[Window]|hyprctl dispatch killactive"
     "Super + T|Toggle Floating (Single Window)|[Window]|hyprctl dispatch togglefloating"
     "Super + V|Toggle Floating (All on Workspace)|[Window]|"

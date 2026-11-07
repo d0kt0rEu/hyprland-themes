@@ -37,18 +37,18 @@ A high-contrast cyberpunk aesthetic featuring deep obsidian glass surfaces (`#0b
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="assets/screenshots/cheatsheet.png" width="48%" alt="Keybinding Cheatsheet" />
-  <img src="assets/screenshots/powermenu.png" width="48%" alt="Power Menu" />
+  <img src="assets/screenshots/app-launcher.png" width="48%" alt="Application Launcher" />
+  <img src="assets/screenshots/wifi-menu.png" width="48%" alt="Wi-Fi Selector" />
 </p>
 
 <p align="center">
-  <img src="assets/screenshots/wifi-menu.png" width="48%" alt="Wi-Fi Selector" />
+  <img src="assets/screenshots/power-menu.png" width="48%" alt="Power Plans & Battery Manager" />
   <img src="assets/screenshots/calculator.png" width="48%" alt="Quick Calculator" />
 </p>
 
 <p align="center">
-  <img src="assets/screenshots/app-launcher.png" width="48%" alt="Rofi Launcher" />
-  <img src="assets/screenshots/battery-menu.png" width="48%" alt="Battery & Power Menu" />
+  <img src="assets/screenshots/cheatsheet.png" width="48%" alt="Keybinding Cheatsheet" />
+  <img src="assets/screenshots/powermenu.png" width="48%" alt="System Power Menu" />
 </p>
 
 ---
@@ -108,6 +108,7 @@ All keybindings are accessible anytime on your desktop by pressing <kbd>Super</k
 | <kbd>Super</kbd> + <kbd>K</kbd> | Interactive Keybinding Cheatsheet |
 | <kbd>Super</kbd> + <kbd>=</kbd> or <kbd>Calc</kbd> | Quick Calculator (Rofi / Qalculate) |
 | <kbd>Super</kbd> + <kbd>M</kbd> | System Power / Logout Menu |
+| <kbd>Click Battery Widget</kbd> | Power Plans & Battery Options (Performance / Balanced / Quiet) |
 | <kbd>Super</kbd> + <kbd>B</kbd> | Toggle Waybar top bar visibility (instant hide/show) |
 | <kbd>Super</kbd> + <kbd>Space</kbd> | Switch Keyboard Layout (with Waybar pill OSD) |
 

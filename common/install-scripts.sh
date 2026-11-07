@@ -9,25 +9,25 @@ echo "  Installing Common Hyprland Scripts & Keybinds"
 echo "  (No themes, CSS, colors, or wallpapers are touched)"
 echo "=========================================================="
 
-# 1. Waybar scripts & menus
-echo "[1/4] Installing Waybar scripts & interactive menus..."
+# 1. Waybar scripts
+echo "[1/4] Installing Waybar scripts & OSD daemons..."
 mkdir -p "${TARGET_HOME}/.config/waybar/scripts"
-mkdir -p "${TARGET_HOME}/.config/waybar/menus"
 
 cp -r "${COMMON_DIR}/scripts/waybar/"* "${TARGET_HOME}/.config/waybar/scripts/"
-cp -r "${COMMON_DIR}/scripts/waybar_menus/"* "${TARGET_HOME}/.config/waybar/menus/"
-chmod +x "${TARGET_HOME}/.config/waybar/scripts/"* "${TARGET_HOME}/.config/waybar/menus/"* 2>/dev/null || true
+chmod +x "${TARGET_HOME}/.config/waybar/scripts/"* 2>/dev/null || true
 
 # 2. Rofi interactive tools (cheatsheet, calc, wifi, powermenu)
 echo "[2/4] Installing Rofi interactive tools..."
 mkdir -p "${TARGET_HOME}/.config/rofi/cheatsheet"
 mkdir -p "${TARGET_HOME}/.config/rofi/powermenu/type-2"
 mkdir -p "${TARGET_HOME}/.config/rofi/wifi"
+mkdir -p "${TARGET_HOME}/.config/rofi/power"
 
 cp "${COMMON_DIR}/scripts/rofi/"*.sh "${TARGET_HOME}/.config/rofi/" 2>/dev/null || true
 cp -r "${COMMON_DIR}/scripts/rofi/cheatsheet/"* "${TARGET_HOME}/.config/rofi/cheatsheet/" 2>/dev/null || true
 cp -r "${COMMON_DIR}/scripts/rofi/powermenu/type-2/"* "${TARGET_HOME}/.config/rofi/powermenu/type-2/" 2>/dev/null || true
 cp -r "${COMMON_DIR}/scripts/rofi/wifi/"* "${TARGET_HOME}/.config/rofi/wifi/" 2>/dev/null || true
+cp -r "${COMMON_DIR}/scripts/rofi/power/"* "${TARGET_HOME}/.config/rofi/power/" 2>/dev/null || true
 
 chmod +x "${TARGET_HOME}/.config/rofi/"*.sh "${TARGET_HOME}/.config/rofi/"*/*.sh "${TARGET_HOME}/.config/rofi/"*/*.py 2>/dev/null || true
 

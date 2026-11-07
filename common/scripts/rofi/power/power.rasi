@@ -1,0 +1,156 @@
+/**
+ * Obsidian Pink Cyberpunk Rofi Theme
+ * Power Plans & Battery Manager
+ **/
+
+configuration {
+    show-icons:                 false;
+    click-to-exit:              true;
+    hover-select:               true;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+    font:                       "JetBrainsMono Nerd Font 11";
+}
+
+* {
+    border-colour:               #bd93f9;
+    handle-colour:               #ff2a85;
+    background-colour:           #0f0c16fa;
+    foreground-colour:           #f1eef8;
+    alternate-background:        #1a1528;
+    normal-background:           transparent;
+    normal-foreground:           #f1eef8;
+    urgent-background:           #ff5555;
+    urgent-foreground:           #ffffff;
+    active-background:           #281b3d;
+    active-foreground:           #bd93f9;
+    selected-normal-background:  #ff2a85;
+    selected-normal-foreground:  #ffffff;
+}
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       680px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      2px solid;
+    border-radius:               16px;
+    border-color:                #bd93f9;
+    background-color:            #0f0c16fa;
+    cursor:                      "default";
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     12px;
+    margin:                      0px;
+    padding:                     20px;
+    border:                      0px solid;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     12px;
+    margin:                      0px 0px 4px 0px;
+    padding:                     10px 16px;
+    border:                      1px solid;
+    border-radius:               12px;
+    border-color:                #3a2d54;
+    background-color:            #1a1528;
+    text-color:                  #f1eef8;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  #ff79c6;
+    font:                        "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  #ffffff;
+    cursor:                      text;
+    placeholder:                 "Select Power Plan or Battery Option...";
+    placeholder-color:           #705f82;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                false;
+    fixed-columns:               true;
+    spacing:                     6px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    background-color:            transparent;
+    text-color:                  #f1eef8;
+    cursor:                      "default";
+}
+
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     10px 14px;
+    border:                      0px solid;
+    border-radius:               8px;
+    background-color:            transparent;
+    text-color:                  #f1eef8;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  #f1eef8;
+}
+
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  #f1eef8;
+}
+
+element normal.active {
+    background-color:            #281b3d;
+    text-color:                  #bd93f9;
+}
+
+element alternate.active {
+    background-color:            #281b3d;
+    text-color:                  #bd93f9;
+}
+
+element selected.normal {
+    background-color:            #ff2a85;
+    text-color:                  #ffffff;
+}
+
+element selected.active {
+    background-color:            #ff2a85;
+    text-color:                  #ffffff;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
