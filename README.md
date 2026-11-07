@@ -111,42 +111,52 @@ All keybindings are accessible anytime on your desktop by pressing <kbd>Super</k
 | <kbd>Super</kbd> + <kbd>B</kbd> | Toggle Waybar top bar visibility (instant hide/show) |
 | <kbd>Super</kbd> + <kbd>Space</kbd> | Switch Keyboard Layout (with Waybar pill OSD) |
 
-### 🪟 Window Management
+### 🪟 Window Management & Transparency
 | Shortcut | Action |
 |---|---|
-| <kbd>Super</kbd> + <kbd>C</kbd> | Close active window |
-| <kbd>Super</kbd> + <kbd>T</kbd> | Toggle window floating state |
-| <kbd>Super</kbd> + <kbd>F</kbd> | Toggle fullscreen mode |
+| <kbd>Super</kbd> + <kbd>C</kbd> | Close focused window |
+| <kbd>Super</kbd> + <kbd>T</kbd> | Toggle floating (single window) |
+| <kbd>Super</kbd> + <kbd>V</kbd> | Toggle floating for all windows on active workspace |
+| <kbd>Super</kbd> + <kbd>F</kbd> | Toggle maximized fullscreen |
 | <kbd>Super</kbd> + <kbd>P</kbd> | Toggle pseudo-tiling mode |
 | <kbd>Super</kbd> + <kbd>J</kbd> | Toggle dwindle split orientation |
 | <kbd>Super</kbd> + <kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> | Move window focus |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> | Move window position |
-| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> | Resize window |
-| <kbd>Super</kbd> + <kbd>[</kbd> | Set active window opacity to 80% |
-| <kbd>Super</kbd> + <kbd>]</kbd> | Set active window opacity to 100% |
-| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>\</kbd> | Reset all window transparencies to 100% |
-
-### 🧭 Workspaces
-| Shortcut | Action |
-|---|---|
-| <kbd>Super</kbd> + <kbd>1</kbd> .. <kbd>0</kbd> | Switch to workspace 1–10 |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>1</kbd> .. <kbd>0</kbd> | Move focused window to workspace 1–10 |
-| <kbd>Super</kbd> + <kbd>S</kbd> | Toggle special scratchpad workspace |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> | Send active window to special scratchpad |
-| <kbd>Super</kbd> + <kbd>Scroll Up/Down</kbd> | Cycle through active workspaces |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> | Resize window width/height (+/-30px, hold to repeat) |
 | <kbd>Super</kbd> + <kbd>Left Mouse Drag</kbd> | Move floating window |
 | <kbd>Super</kbd> + <kbd>Right Mouse Drag</kbd> | Resize floating window |
+| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>↑</kbd> | Increase active window opacity (+5%, more solid) |
+| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>↓</kbd> | Decrease active window opacity (-5%, more glass) |
+| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd> | Reset active window opacity to 100% |
+| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>\</kbd> | Reset all windows opacity to 100% |
 
-### 🔉 Hardware Controls
+### 🧭 Workspaces & Navigation
 | Shortcut | Action |
 |---|---|
-| <kbd>XF86AudioRaiseVolume</kbd> | Volume Up (with Waybar pill OSD) |
-| <kbd>XF86AudioLowerVolume</kbd> | Volume Down (with Waybar pill OSD) |
-| <kbd>XF86AudioMute</kbd> | Mute Output |
-| <kbd>XF86AudioMicMute</kbd> | Mute Microphone |
-| <kbd>XF86MonBrightnessUp</kbd> | Brightness Up (with Waybar pill OSD) |
-| <kbd>XF86MonBrightnessDown</kbd> | Brightness Down (with Waybar pill OSD) |
-| <kbd>Media Play/Pause/Next/Prev</kbd> | Media playback control via `playerctl` |
+| <kbd>Super</kbd> + <kbd>1</kbd> .. <kbd>9</kbd>, <kbd>0</kbd> | Switch to workspace 1–10 |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>1</kbd> .. <kbd>9</kbd>, <kbd>0</kbd> | Move focused window to workspace 1–10 |
+| <kbd>Super</kbd> + <kbd>S</kbd> | Toggle special scratchpad workspace (`magic`) |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> | Send active window to special scratchpad |
+| <kbd>Super</kbd> + <kbd>Scroll Down</kbd> | Switch to next active workspace (`e+1`) |
+| <kbd>Super</kbd> + <kbd>Scroll Up</kbd> | Switch to previous active workspace (`e-1`) |
+
+### 📸 Screenshots
+| Shortcut | Action |
+|---|---|
+| <kbd>Print</kbd> | Select area and copy screenshot directly to clipboard (`grim + slurp`) |
+| <kbd>Shift</kbd> + <kbd>Print</kbd> | Select area and open screenshot in Swappy editor |
+
+### 🔉 Hardware & Media Controls
+| Shortcut | Action |
+|---|---|
+| <kbd>XF86AudioRaiseVolume</kbd> | Volume Up (+5% with Waybar pill OSD) |
+| <kbd>XF86AudioLowerVolume</kbd> | Volume Down (-5% with Waybar pill OSD) |
+| <kbd>XF86AudioMute</kbd> | Toggle Audio Mute (with Waybar pill OSD) |
+| <kbd>XF86AudioMicMute</kbd> | Toggle Microphone Mute (with Waybar pill OSD) |
+| <kbd>XF86MonBrightnessUp</kbd> | Brightness Up (+5% with Waybar pill OSD) |
+| <kbd>XF86MonBrightnessDown</kbd> | Brightness Down (-5% with Waybar pill OSD) |
+| <kbd>XF86AudioPlay</kbd> / <kbd>Pause</kbd> | Media Play/Pause toggle (`playerctl play-pause`) |
+| <kbd>XF86AudioNext</kbd> | Next track (`playerctl next`) |
+| <kbd>XF86AudioPrev</kbd> | Previous track (`playerctl previous`) |
 
 ---
 

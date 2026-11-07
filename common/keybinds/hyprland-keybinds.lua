@@ -8,66 +8,62 @@ local mainMod = "SUPER"
 local terminal = "kitty"
 local fileManager = "dolphin"
 local menu = home .. "/.config/rofi/launcher.sh"
-local resizeUnit = 20
+local resizeUnit = 30
 
--- Applications
+-- Applications & Launchers
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + C", hl.dsp.window.close())
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(home .. "/.config/rofi/powermenu/type-2/powermenu.sh"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd(home .. "/.config/rofi/cheatsheet/cheatsheet.sh"))
 hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd(home .. "/.config/rofi/calc.sh"))
 hl.bind("XF86Calculator", hl.dsp.exec_cmd(home .. "/.config/rofi/calc.sh"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(home .. "/.config/rofi/powermenu/type-2/powermenu.sh"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
+hl.bind("SUPER + space", hl.dsp.exec_cmd(home .. "/.config/waybar/scripts/lang-osd.sh"))
 
 -- Window Management
+hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 
--- Focus Navigation
+-- Focus Navigation (Super + Arrow Keys)
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
--- Window Moving
-hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
-hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
-hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
-hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
+-- Window Resizing (Super + Shift + Arrow Keys - hold to repeat)
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.resize({ x = resizeUnit, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.resize({ x = -resizeUnit, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.resize({ x = 0, y = -resizeUnit, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.resize({ x = 0, y = resizeUnit, relative = true }), { repeating = true })
 
--- Window Resizing
-hl.bind(mainMod .. " + CTRL + left", hl.dsp.window.resize({ x = -resizeUnit, y = 0 }))
-hl.bind(mainMod .. " + CTRL + right", hl.dsp.window.resize({ x = resizeUnit, y = 0 }))
-hl.bind(mainMod .. " + CTRL + up", hl.dsp.window.resize({ x = 0, y = -resizeUnit }))
-hl.bind(mainMod .. " + CTRL + down", hl.dsp.window.resize({ x = 0, y = resizeUnit }))
+-- Mouse Drag & Resize
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Transparency Controls
-hl.bind(mainMod .. " + bracketleft", hl.dsp.exec_cmd("hyprctl dispatch setprop active opacity 0.8"))
-hl.bind(mainMod .. " + bracketright", hl.dsp.exec_cmd("hyprctl dispatch setprop active opacity 1.0"))
-hl.bind("CTRL + ALT + backslash", hl.dsp.exec_cmd("hyprctl dispatch setprop active opacity 1.0"))
-
--- Workspaces: Switch
-for i = 1, 9 do
-	hl.bind(mainMod .. " + " .. i, hl.dsp.workspace({ id = i }))
+-- Workspaces: Switch (Super + 1-9, 0)
+for i = 1, 10 do
+	local key = i % 10
+	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
-hl.bind(mainMod .. " + 0", hl.dsp.workspace({ id = 10 }))
-
--- Workspaces: Move to Workspace
-for i = 1, 9 do
-	hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.movetoworkspace({ id = i }))
-end
-hl.bind(mainMod .. " + SHIFT + 0", hl.dsp.window.movetoworkspace({ id = 10 }))
 
 -- Workspaces: Special / Scratchpad
-hl.bind(mainMod .. " + S", hl.dsp.workspace.special({ name = "magic" }))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.movetoworkspace({ special = "magic" }))
+hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+
+-- Workspaces: Mouse Scroll
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+
+-- Screenshots
+hl.bind("PRINT", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | wl-copy]]))
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | swappy -f -]]))
 
 -- Hardware / Media Keys
-hl.bind("SUPER + space", hl.dsp.exec_cmd(home .. "/.config/waybar/scripts/lang-osd.sh"))
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(home .. "/.config/waybar/scripts/volume-osd.sh raise"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(home .. "/.config/waybar/scripts/volume-osd.sh lower"), { locked = true, repeating = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd(home .. "/.config/waybar/scripts/volume-osd.sh mute"), { locked = true, repeating = true })

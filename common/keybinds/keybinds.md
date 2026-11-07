@@ -24,18 +24,19 @@
 | `SUPER + P` | Toggle Pseudo Tiling | `pseudo` |
 | `SUPER + J` | Toggle Split Direction (Dwindle) | `togglesplit` |
 | `SUPER + Left / Right / Up / Down` | Focus Window by Direction | `movefocus, <dir>` |
-| `SUPER + Shift + Left / Right / Up / Down` | Resize Window (Hold to repeat) | `resizeactive, +/-20px` |
+| `SUPER + Shift + Left / Right / Up / Down` | Resize Window (Hold to repeat) | `resizeactive, +/-30px` |
 | `SUPER + Left Mouse Drag` | Move Floating Window | Mouse drag |
 | `SUPER + Right Mouse Drag` | Resize Floating Window | Mouse resize |
 
 ## Workspaces
 | Keybinding | Action |
 | :--- | :--- |
-| `SUPER + 1 .. 9` | Switch to Workspace 1 through 9 |
-| `SUPER + Shift + 1 .. 9` | Move Focused Window to Workspace 1 through 9 |
+| `SUPER + 1 .. 9, 0` | Switch to Workspace 1 through 10 |
+| `SUPER + Shift + 1 .. 9, 0` | Move Focused Window to Workspace 1 through 10 |
 | `SUPER + S` | Toggle Scratchpad / Special Workspace (`magic`) |
 | `SUPER + Shift + S` | Move Focused Window to Scratchpad |
-| `SUPER + Mouse Scroll Up / Down` | Switch to Next / Previous Workspace |
+| `SUPER + Mouse Scroll Down` | Switch to Next Active Workspace (`e+1`) |
+| `SUPER + Mouse Scroll Up` | Switch to Previous Active Workspace (`e-1`) |
 
 ## Custom Opacity & Transparency
 | Keybinding | Action |

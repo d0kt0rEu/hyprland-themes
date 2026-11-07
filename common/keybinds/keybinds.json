@@ -122,32 +122,32 @@
     },
     {
       "key": "SUPER + Shift + Right",
-      "action": "Resize Window Width +20px",
+      "action": "Resize Window Width +30px (Hold to Repeat)",
       "category": "Window"
     },
     {
       "key": "SUPER + Shift + Left",
-      "action": "Resize Window Width -20px",
+      "action": "Resize Window Width -30px (Hold to Repeat)",
       "category": "Window"
     },
     {
       "key": "SUPER + Shift + Up",
-      "action": "Resize Window Height -20px",
+      "action": "Resize Window Height -30px (Hold to Repeat)",
       "category": "Window"
     },
     {
       "key": "SUPER + Shift + Down",
-      "action": "Resize Window Height +20px",
+      "action": "Resize Window Height +30px (Hold to Repeat)",
       "category": "Window"
     },
     {
-      "key": "SUPER + 1 .. 9",
-      "action": "Switch to Workspace 1..9",
+      "key": "SUPER + 1 .. 9, 0",
+      "action": "Switch to Workspace 1..10",
       "category": "Workspaces"
     },
     {
-      "key": "SUPER + Shift + 1 .. 9",
-      "action": "Move Focused Window to Workspace 1..9",
+      "key": "SUPER + Shift + 1 .. 9, 0",
+      "action": "Move Focused Window to Workspace 1..10",
       "category": "Workspaces"
     },
     {
@@ -165,8 +165,15 @@
       "category": "Workspaces"
     },
     {
-      "key": "SUPER + Mouse Scroll Up/Down",
-      "action": "Cycle Active Workspace Next / Previous",
+      "key": "SUPER + Mouse Scroll Down",
+      "action": "Cycle to Next Active Workspace (e+1)",
+      "dispatcher": "hl.dsp.focus({ workspace = \"e+1\" })",
+      "category": "Workspaces"
+    },
+    {
+      "key": "SUPER + Mouse Scroll Up",
+      "action": "Cycle to Previous Active Workspace (e-1)",
+      "dispatcher": "hl.dsp.focus({ workspace = \"e-1\" })",
       "category": "Workspaces"
     },
     {
