@@ -7,9 +7,9 @@
     "width": 140,
     "modules-center": ["custom/brightness"],
     "custom/brightness": {
-        "exec": "/home/d0kt0r/.config/waybar/scripts/get-brightness.sh",
+        "exec": "$HOME/.config/waybar/scripts/get-brightness.sh",
         "interval": "once",
-        "on-scroll-up": "/home/d0kt0r/.config/waybar/scripts/brightness-osd.sh up",
-        "on-scroll-down": "/home/d0kt0r/.config/waybar/scripts/brightness-osd.sh down"
+        "on-scroll-up": "$HOME/.config/waybar/scripts/brightness-osd.sh up",
+        "on-scroll-down": "$HOME/.config/waybar/scripts/brightness-osd.sh down"
     }
 }

@@ -7,10 +7,10 @@
     "width": 140,
     "modules-center": ["custom/volume"],
     "custom/volume": {
-        "exec": "/home/d0kt0r/.config/waybar/scripts/get-volume.sh",
+        "exec": "$HOME/.config/waybar/scripts/get-volume.sh",
         "interval": "once",
-        "on-click": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh mute",
-        "on-scroll-up": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh raise",
-        "on-scroll-down": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh lower"
+        "on-click": "$HOME/.config/waybar/scripts/volume-osd.sh mute",
+        "on-scroll-up": "$HOME/.config/waybar/scripts/volume-osd.sh raise",
+        "on-scroll-down": "$HOME/.config/waybar/scripts/volume-osd.sh lower"
     }
 }

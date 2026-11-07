@@ -18,7 +18,7 @@
     {
       "key": "SUPER + M",
       "action": "System Power Menu",
-      "command": "/home/d0kt0r/.config/rofi/powermenu/type-2/powermenu.sh",
+      "command": "~/.config/rofi/powermenu/type-2/powermenu.sh",
       "category": "System"
     },
     {
@@ -36,25 +36,25 @@
     {
       "key": "SUPER + R",
       "action": "Application Launcher (rofi)",
-      "command": "/home/d0kt0r/.config/rofi/launcher.sh",
+      "command": "~/.config/rofi/launcher.sh",
       "category": "Apps"
     },
     {
       "key": "SUPER + K",
       "action": "Keybindings Cheatsheet",
-      "command": "/home/d0kt0r/.config/rofi/cheatsheet/cheatsheet.sh",
+      "command": "~/.config/rofi/cheatsheet/cheatsheet.sh",
       "category": "Apps"
     },
     {
       "key": "SUPER + =",
       "action": "Quick Calculator (rofi qalc)",
-      "command": "/home/d0kt0r/.config/rofi/calc.sh",
+      "command": "~/.config/rofi/calc.sh",
       "category": "Apps"
     },
     {
       "key": "XF86Calculator",
       "action": "Quick Calculator (rofi qalc)",
-      "command": "/home/d0kt0r/.config/rofi/calc.sh",
+      "command": "~/.config/rofi/calc.sh",
       "category": "Apps"
     },
     {
@@ -93,7 +93,7 @@
     {
       "key": "SUPER + Space",
       "action": "Switch Keyboard Layout (OSD)",
-      "command": "/home/d0kt0r/.config/waybar/scripts/lang-osd.sh",
+      "command": "~/.config/waybar/scripts/lang-osd.sh",
       "category": "System"
     },
     {
@@ -214,37 +214,37 @@
     {
       "key": "XF86AudioRaiseVolume",
       "action": "Raise Volume +5% (with OSD)",
-      "command": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh raise",
+      "command": "~/.config/waybar/scripts/volume-osd.sh raise",
       "category": "Media"
     },
     {
       "key": "XF86AudioLowerVolume",
       "action": "Lower Volume -5% (with OSD)",
-      "command": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh lower",
+      "command": "~/.config/waybar/scripts/volume-osd.sh lower",
       "category": "Media"
     },
     {
       "key": "XF86AudioMute",
       "action": "Toggle Audio Mute (with OSD)",
-      "command": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh mute",
+      "command": "~/.config/waybar/scripts/volume-osd.sh mute",
       "category": "Media"
     },
     {
       "key": "XF86AudioMicMute",
       "action": "Toggle Microphone Mute (with OSD)",
-      "command": "/home/d0kt0r/.config/waybar/scripts/volume-osd.sh mic-mute",
+      "command": "~/.config/waybar/scripts/volume-osd.sh mic-mute",
       "category": "Media"
     },
     {
       "key": "XF86MonBrightnessUp",
       "action": "Increase Brightness +5% (with OSD)",
-      "command": "/home/d0kt0r/.config/waybar/scripts/brightness-osd.sh up",
+      "command": "~/.config/waybar/scripts/brightness-osd.sh up",
       "category": "Hardware"
     },
     {
       "key": "XF86MonBrightnessDown",
       "action": "Decrease Brightness -5% (with OSD)",
-      "command": "/home/d0kt0r/.config/waybar/scripts/brightness-osd.sh down",
+      "command": "~/.config/waybar/scripts/brightness-osd.sh down",
       "category": "Hardware"
     },
     {

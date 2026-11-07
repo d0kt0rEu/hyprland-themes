@@ -7,7 +7,7 @@
     "width": 120,
     "modules-center": ["custom/layout"],
     "custom/layout": {
-        "exec": "/home/d0kt0r/.config/waybar/scripts/get-layout.sh",
+        "exec": "$HOME/.config/waybar/scripts/get-layout.sh",
         "interval": "once"
     }
 }

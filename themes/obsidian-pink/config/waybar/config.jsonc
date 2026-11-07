@@ -59,8 +59,8 @@
         "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click": "/home/d0kt0r/.config/rofi/wifi/wifi.sh &",
-        "on-click-right": "/home/d0kt0r/.config/rofi/wifi/wifinew.sh &",
+        "on-click": "$HOME/.config/rofi/wifi/wifi.sh &",
+        "on-click-right": "$HOME/.config/rofi/wifi/wifinew.sh &",
         "interval": 5,
         "nospacing": 1
     },
@@ -116,11 +116,11 @@
             "critical": 10
         },
         "tooltip": false,
-        "on-click": "$HOME/.config/rofi/powerprofile.sh &"
+        "on-click": "$HOME/.config/rofi/power/power.sh &"
     },
     "custom/power": {
         "format": "󰤆",
         "tooltip": false,
-        "on-click": "/home/d0kt0r/.config/rofi/powermenu/type-2/powermenu.sh &"
+        "on-click": "$HOME/.config/rofi/powermenu/type-2/powermenu.sh &"
     }
 }

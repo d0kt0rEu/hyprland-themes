@@ -6,20 +6,27 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-echo "=== Setting up Hyprlock as Login Screen ==="
+REAL_USER="${SUDO_USER:-$(logname 2>/dev/null || echo $USER)}"
+USER_HOME="$(getent passwd "$REAL_USER" | cut -d: -f6)"
+
+echo "=== Setting up Hyprlock as Login Screen for user: ${REAL_USER} ==="
 
 # 1. Copy desktop wallpaper to public system directory
 echo "[1/3] Copying desktop wallpaper to /usr/share/wallpapers/mountain.jpg..."
 mkdir -p /usr/share/wallpapers
-cp /home/d0kt0r/Pictures/wallpapers/a_mountain_with_trees_and_moon.jpg /usr/share/wallpapers/mountain.jpg
-chmod 644 /usr/share/wallpapers/mountain.jpg
+if [ -f "${USER_HOME}/Pictures/wallpapers/a_mountain_with_trees_and_moon.jpg" ]; then
+    cp "${USER_HOME}/Pictures/wallpapers/a_mountain_with_trees_and_moon.jpg" /usr/share/wallpapers/mountain.jpg
+elif [ -f "$(dirname "$0")/../themes/obsidian-pink/wallpapers/a_mountain_with_trees_and_moon.jpg" ]; then
+    cp "$(dirname "$0")/../themes/obsidian-pink/wallpapers/a_mountain_with_trees_and_moon.jpg" /usr/share/wallpapers/mountain.jpg
+fi
+chmod 644 /usr/share/wallpapers/mountain.jpg 2>/dev/null || true
 
 # 2. Configure autologin drop-in for plasmalogin
-echo "[2/3] Configuring autologin for d0kt0r directly into Hyprland..."
+echo "[2/3] Configuring autologin for ${REAL_USER} directly into Hyprland..."
 mkdir -p /etc/plasmalogin.conf.d
-cat << 'EOF' > /etc/plasmalogin.conf.d/autologin.conf
+cat << EOF > /etc/plasmalogin.conf.d/autologin.conf
 [Autologin]
-User=d0kt0r
+User=${REAL_USER}
 Session=hyprland-uwsm.desktop
 Relogin=false
 EOF

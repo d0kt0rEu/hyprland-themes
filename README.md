@@ -25,7 +25,7 @@ A high-contrast cyberpunk aesthetic featuring deep obsidian glass surfaces (`#0b
 | Component | Theme Integration |
 |---|---|
 | **Hyprland** | Lua-based config (`hyprland.lua`), active neon borders, dynamic window opacity toggles |
-| **Waybar** | Floating pill styling, interactive PyGObject quick menus, OSD indicators |
+| **Waybar** | Floating pill styling, interactive system status indicators & OSD popups |
 | **Rofi** | Custom rounded menus for Application Launcher, Cheatsheet, Wi-Fi, Calculator, and Power Menu |
 | **Lockscreen** | Custom `hyprlock.conf` with cyberpunk clock, battery stats, and avatar styling |
 | **Terminal** | `kitty` color scheme (`cyberpunk-neon.conf`) + `fastfetch` system banner |
@@ -160,8 +160,7 @@ hyprland-themes/
 │   ├── keybinds/                  # Standalone keybind exports (conf, lua, json, md)
 │   ├── scripts/
 │   │   ├── waybar/                # OSD pill popups and system status scripts
-│   │   ├── waybar_menus/          # Interactive PyGObject GTK popup menus
-│   │   └── rofi/                  # Functional launcher, cheatsheet, wifi, & calc scripts
+│   │   └── rofi/                  # Functional launcher, cheatsheet, wifi, power, & calc scripts
 │   └── install-scripts.sh         # Installs only functional scripts without touching themes
 ├── extras/
 │   ├── jetbrains-theme/           # Obsidian Pink theme plugin for CLion, RustRover, IDEA
