@@ -150,7 +150,7 @@
     "format-connected": "<span size='15000'></span>",
     "format-no-controller": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "omarchy-launch-bluetooth"
+    "on-click": "/home/d0kt0r/.config/rofi/bluetooth/bluetooth.sh"
   },
 
   "pulseaudio": {

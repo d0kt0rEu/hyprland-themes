@@ -286,7 +286,7 @@ sudo pacman -S hyprland waybar rofi-wayland kitty dolphin fastfetch
 sudo pacman -S hyprlock hyprpaper grim slurp wl-clipboard brightnessctl playerctl
 
 # Audio & networking
-sudo pacman -S wireplumber pipewire-pulse networkmanager
+sudo pacman -S wireplumber pipewire-pulse pipewire-audio bluez bluez-utils networkmanager
 
 # Calculator & scripting dependencies
 sudo pacman -S libqalculate qalculate-gtk python-gobject gtk3

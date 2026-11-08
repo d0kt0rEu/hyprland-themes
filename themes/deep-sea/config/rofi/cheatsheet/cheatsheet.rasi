@@ -26,8 +26,8 @@ configuration {
     urgent-foreground:           #1e2326;
     active-background:           #83c092;
     active-foreground:           #1e2326;
-    selected-normal-background:  #7fbbb3;
-    selected-normal-foreground:  #1e2326;
+    selected-normal-background:  #2a363b;
+    selected-normal-foreground:  #e2e8e4;
 }
 
 window {
@@ -142,8 +142,11 @@ element alternate.active {
 }
 
 element selected.normal {
-    background-color:            #7fbbb3;
-    text-color:                  #1e2326;
+    background-color:            #32434b;
+    border:                      1px solid;
+    border-color:                #7fbbb3;
+    border-radius:               6px;
+    text-color:                  #e2e8e4;
 }
 
 element selected.active {
