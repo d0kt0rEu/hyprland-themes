@@ -554,3 +554,11 @@ hl.window_rule({
 	center = true,
 	size = "900 650",
 })
+
+hl.window_rule({
+	name = "float-dolphin",
+	match = { class = "org.kde.dolphin" },
+	float = true,
+	size = "1360 840",
+	center = true,
+})

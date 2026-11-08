@@ -39,7 +39,8 @@ A calm, elegant aesthetic inspired by deep oceanic trenches and the Everforest p
 | **Rofi** | Custom rounded menus for Application Launcher, Cheatsheet, Wi-Fi, Calculator, and Power Menu |
 | **Lockscreen** | Custom `hyprlock.conf` with minimalist clock, battery stats, and avatar styling |
 | **Terminal** | `kitty` color scheme (`deepsea.conf`) + `fastfetch` system banner |
-| **GTK & Apps** | Custom GTK-3 CSS styling + `qalculate-gtk` dark everforest scheme with margin bugfix shim |
+| **Dolphin & Qt** | Native KDE Plasma 6 Breeze integration (`DeepSea.colors`), custom aquamarine folder icons, full path breadcrumbs |
+| **GTK & Apps** | Custom GTK-3 CSS styling + `qalculate-gtk` high-contrast Everforest scheme with margin bugfix shim |
 | **Extras** | Matching JetBrains IDE theme plugin (`Deep Sea`) & Limine bootloader theme |
 
 ### 🌌 2. Obsidian Pink
@@ -78,6 +79,9 @@ A high-contrast cyberpunk aesthetic featuring deep obsidian glass surfaces (`#0b
   <img src="assets/screenshots/deep-sea/calculator.png" width="48%" alt="Quick Calculator" />
 </p>
 
+<p align="center">
+  <img src="assets/screenshots/deep-sea/dolphin.png" width="96%" alt="Dolphin File Manager (KDE Breeze)" />
+</p>
 <p align="center">
   <img src="assets/screenshots/deep-sea/cheatsheet.png" width="96%" alt="Keybinding Cheatsheet" />
 </p>

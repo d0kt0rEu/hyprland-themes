@@ -23,7 +23,9 @@
     "gtk-3.0",
     "qalculate",
     "hyprlock",
-    "hyprpaper"
+    "hyprpaper",
+    "dolphin",
+    "kde"
   ],
   "default_wallpaper": "a_mountain_with_trees_and_moon.jpg"
 }

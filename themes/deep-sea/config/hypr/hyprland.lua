@@ -57,6 +57,8 @@ end)
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("QT_QPA_PLATFORMTHEME", "kde")
+hl.env("QT_STYLE_OVERRIDE", "Breeze")
 hl.env("PATH", os.getenv("HOME") .. "/.cargo/bin:" .. os.getenv("HOME") .. "/.local/bin:" .. (os.getenv("PATH") or "/usr/local/bin:/usr/bin:/bin"))
 hl.env("OMARCHY_PATH", os.getenv("HOME") .. "/.config/omarchy")
 hl.env("SPA_PLUGIN_DIR", os.getenv("HOME") .. "/.local/lib/spa-0.2")
@@ -552,5 +554,13 @@ hl.window_rule({
 	match = { class = "qalculate-gtk" },
 	float = true,
 	size = "820 680",
+	center = true,
+})
+
+hl.window_rule({
+	name = "float-dolphin",
+	match = { class = "org.kde.dolphin" },
+	float = true,
+	size = "1360 840",
 	center = true,
 })

@@ -25,7 +25,9 @@
     "gtk-3.0",
     "qalculate",
     "hyprlock",
-    "hyprpaper"
+    "hyprpaper",
+    "dolphin",
+    "kde"
   ],
   "default_wallpaper": "polyscape-everforest.png"
 }

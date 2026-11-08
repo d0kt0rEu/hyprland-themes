@@ -11,18 +11,20 @@
 /* Menu Bar */
 #main_window menubar {
     background-color: #1A1F22;
-    color: #9DA9A0;
     border-bottom: 1px solid #273237;
     padding: 2px 4px;
 }
 
-#main_window menubar menuitem {
-    color: #A7B5AC;
+#main_window menubar menuitem,
+#main_window menubar menuitem label {
+    color: #D3C6AA;
     padding: 3px 8px;
     border-radius: 4px;
+    font-weight: 500;
 }
 
-#main_window menubar menuitem:hover {
+#main_window menubar menuitem:hover,
+#main_window menubar menuitem:hover label {
     background-color: #27343A;
     color: #7FBBB3;
 }
@@ -35,7 +37,8 @@
     padding: 4px;
 }
 
-#main_window menu menuitem:hover {
+#main_window menu menuitem:hover,
+#main_window menu menuitem:hover label {
     background-color: #2A363C;
     color: #83C092;
 }
@@ -44,12 +47,12 @@
    DISPLAY AREA (Expression & Result)
    ------------------------------------------------------------ */
 
-/* Sleek expression input box */
+/* Expression input box */
 #main_window #expressionscrolled,
 #main_window #expressiontext {
     background-color: #161B1D;
-    color: #E6E2D8;
-    font-size: 13.5pt;
+    color: #FFFFFF;
+    font-size: 14pt;
     font-family: "JetBrainsMono Nerd Font", monospace;
 }
 
@@ -65,7 +68,7 @@
     color: #FFFFFF;
 }
 
-/* Remove awkward middle black bar: seamless result area */
+/* Result area */
 #main_window #scrolled_result,
 #main_window #resultport,
 #main_window #resulteventbox,
@@ -76,6 +79,7 @@
     background-color: #1E2326;
     border: none;
     box-shadow: none;
+    color: #FFFFFF;
 }
 
 #main_window #scrolled_result {
@@ -83,7 +87,7 @@
     padding: 2px 4px;
 }
 
-/* Status line (RAD, parsed expression preview) */
+/* Status line */
 #main_window #frame_status,
 #main_window #box_status,
 #main_window label#label_status_angle,
@@ -91,23 +95,25 @@
     background-color: transparent;
     border: none;
     color: #7FBBB3;
-    font-size: 9pt;
-    font-weight: 600;
+    font-size: 9.5pt;
+    font-weight: bold;
 }
 
 /* Action button at right of expression bar */
-#main_window #expression_button {
+#main_window #expression_button,
+#main_window #expression_button label {
     background-color: transparent;
     color: #7FBBB3;
     border-radius: 6px;
 }
 
-#main_window #expression_button:hover {
+#main_window #expression_button:hover,
+#main_window #expression_button:hover label {
     background-color: #27343A;
     color: #83C092;
 }
 
-/* Hide / collapse splitter in middle of keypad */
+/* Splitter in keypad */
 #main_window #box_hide_buttons {
     background-color: transparent;
     border: none;
@@ -124,39 +130,50 @@
     color: #7FBBB3;
 }
 
-/* Expanders (Keypad, History, Conversion) */
-#main_window expander title {
+/* Expanders */
+#main_window expander title,
+#main_window expander title label {
     color: #7FBBB3;
-    font-weight: 600;
+    font-weight: bold;
+    font-size: 10.5pt;
     padding: 4px 6px;
 }
 
-#main_window expander title:hover {
+#main_window expander title:hover,
+#main_window expander title:hover label {
     color: #83C092;
 }
 
-/* Keypad Dropdowns & Toggles (Exact, Normal, Decimal, etc.) */
+/* Dropdowns & Mode Toggles */
 #main_window combobox button.combo,
+#main_window combobox button.combo label,
 #main_window combobox textview,
 #main_window .linked > button,
-#main_window #button_programmers_keypad,
-#main_window #button_exact,
-#main_window #button_fraction {
+#main_window .linked > button label,
+#main_window button#button_programmers_keypad,
+#main_window button#button_exact,
+#main_window button#button_exact label,
+#main_window button#button_fraction,
+#main_window button#button_fraction label {
     background-color: #232B2F;
-    color: #A7C080;
+    color: #D3C6AA;
     border: 1px solid #2E3A40;
     border-radius: 6px;
-    padding: 4px 8px;
+    font-size: 10pt;
+    font-weight: 600;
+    padding: 3px 6px;
 }
 
 #main_window combobox button.combo:hover,
+#main_window combobox button.combo:hover label,
 #main_window .linked > button:hover,
-#main_window #button_programmers_keypad:hover,
-#main_window #button_exact:hover,
-#main_window #button_fraction:hover {
+#main_window .linked > button:hover label,
+#main_window button#button_programmers_keypad:hover,
+#main_window button#button_exact:hover,
+#main_window button#button_fraction:hover {
     background-color: #2A363C;
     border-color: #7FBBB3;
-    color: #E6E2D8;
+    color: #FFFFFF;
 }
 
 /* ------------------------------------------------------------
@@ -164,179 +181,238 @@
    ------------------------------------------------------------ */
 
 /* Base style for keypad buttons */
+#main_window button {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    border-radius: 7px;
+}
+
 #main_window #grid_buttons button,
+#main_window #table_buttons button,
 #main_window #stack_left_buttons button,
 #main_window #stack_move button,
 #main_window #stack_move2 button {
     background-color: #222A2E;
-    color: #A7C080;
     border: 1px solid #2D383E;
-    border-radius: 7px;
-    font-size: 11pt;
-    font-weight: 500;
     padding: 6px;
     transition: all 100ms ease-in-out;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#main_window #grid_buttons button label,
+#main_window #table_buttons button label,
+#main_window #stack_left_buttons button label {
+    color: #D3C6AA;
+    font-size: 11pt;
+    font-weight: 600;
 }
 
 #main_window #grid_buttons button:hover,
+#main_window #table_buttons button:hover,
 #main_window #stack_left_buttons button:hover {
     background-color: #2C373D;
     border-color: #7FBBB3;
-    color: #E6E2D8;
 }
 
-/* 1. Numbers (0-9, ., ,, ±) - Crisp, Elevated, High Contrast */
-#main_window #button_zero,
-#main_window #button_one,
-#main_window #button_two,
-#main_window #button_three,
-#main_window #button_four,
-#main_window #button_five,
-#main_window #button_six,
-#main_window #button_seven,
-#main_window #button_eight,
-#main_window #button_nine,
-#main_window #button_dot,
-#main_window #button_comma,
-#main_window #button_plusminus {
+#main_window #grid_buttons button:hover label,
+#main_window #table_buttons button:hover label,
+#main_window #stack_left_buttons button:hover label {
+    color: #FFFFFF;
+}
+
+/* 1. Numbers (0-9, ., ,, ±) */
+#main_window button#button_zero,
+#main_window button#button_one,
+#main_window button#button_two,
+#main_window button#button_three,
+#main_window button#button_four,
+#main_window button#button_five,
+#main_window button#button_six,
+#main_window button#button_seven,
+#main_window button#button_eight,
+#main_window button#button_nine,
+#main_window button#button_dot,
+#main_window button#button_comma,
+#main_window button#button_plusminus {
     background-color: #2D353B;
-    color: #FDF6E3;
+    border: 1px solid #3B474E;
+}
+
+#main_window button#button_zero label,
+#main_window button#button_one label,
+#main_window button#button_two label,
+#main_window button#button_three label,
+#main_window button#button_four label,
+#main_window button#button_five label,
+#main_window button#button_six label,
+#main_window button#button_seven label,
+#main_window button#button_eight label,
+#main_window button#button_nine label,
+#main_window button#button_dot label,
+#main_window button#button_comma label,
+#main_window button#button_plusminus label {
+    color: #FFFFFF;
     font-size: 13.5pt;
     font-weight: bold;
-    border: 1px solid #3B474E;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-#main_window #button_zero:hover,
-#main_window #button_one:hover,
-#main_window #button_two:hover,
-#main_window #button_three:hover,
-#main_window #button_four:hover,
-#main_window #button_five:hover,
-#main_window #button_six:hover,
-#main_window #button_seven:hover,
-#main_window #button_eight:hover,
-#main_window #button_nine:hover,
-#main_window #button_dot:hover,
-#main_window #button_comma:hover,
-#main_window #button_plusminus:hover {
+#main_window button#button_zero:hover,
+#main_window button#button_one:hover,
+#main_window button#button_two:hover,
+#main_window button#button_three:hover,
+#main_window button#button_four:hover,
+#main_window button#button_five:hover,
+#main_window button#button_six:hover,
+#main_window button#button_seven:hover,
+#main_window button#button_eight:hover,
+#main_window button#button_nine:hover,
+#main_window button#button_dot:hover,
+#main_window button#button_comma:hover,
+#main_window button#button_plusminus:hover {
     background-color: #364249;
     border-color: #7FBBB3;
-    color: #FFFFFF;
-    box-shadow: 0 0 8px rgba(127, 187, 179, 0.35);
 }
 
-#main_window #button_zero:active,
-#main_window #button_one:active,
-#main_window #button_two:active,
-#main_window #button_three:active,
-#main_window #button_four:active,
-#main_window #button_five:active,
-#main_window #button_six:active,
-#main_window #button_seven:active,
-#main_window #button_eight:active,
-#main_window #button_nine:active {
-    background-color: #22292E;
-}
-
-/* 2. Arithmetic Operators (+, -, *, /, x^y, %) - Deep Sea Cyan Accent */
-#main_window #button_add,
-#main_window #button_sub,
-#main_window #button_times,
-#main_window #button_divide,
-#main_window #button_xy,
-#main_window #button_percent {
+/* 2. Arithmetic Operators (+, -, *, /, x^y, %) */
+#main_window button#button_add,
+#main_window button#button_sub,
+#main_window button#button_times,
+#main_window button#button_divide,
+#main_window button#button_xy,
+#main_window button#button_percent {
     background-color: #222B2F;
-    color: #7FBBB3;
-    font-size: 13pt;
-    font-weight: bold;
     border: 1px solid #313F46;
 }
 
-#main_window #button_add:hover,
-#main_window #button_sub:hover,
-#main_window #button_times:hover,
-#main_window #button_divide:hover,
-#main_window #button_xy:hover,
-#main_window #button_percent:hover {
-    background-color: #2C3940;
-    color: #A7C080;
-    border-color: #7FBBB3;
-    box-shadow: 0 0 8px rgba(127, 187, 179, 0.35);
+#main_window button#button_add label,
+#main_window button#button_sub label,
+#main_window button#button_times label,
+#main_window button#button_divide label,
+#main_window button#button_xy label,
+#main_window button#button_percent label {
+    color: #7FBBB3;
+    font-size: 13.5pt;
+    font-weight: bold;
 }
 
-/* 3. Clear & Delete (C, DEL) - Vibrant Coral Accent */
-#main_window #button_ac,
-#main_window #button_del {
+#main_window button#button_add:hover,
+#main_window button#button_sub:hover,
+#main_window button#button_times:hover,
+#main_window button#button_divide:hover,
+#main_window button#button_xy:hover,
+#main_window button#button_percent:hover {
+    background-color: #2C3940;
+    border-color: #7FBBB3;
+}
+
+#main_window button#button_add:hover label,
+#main_window button#button_sub:hover label,
+#main_window button#button_times:hover label,
+#main_window button#button_divide:hover label,
+#main_window button#button_xy:hover label,
+#main_window button#button_percent:hover label {
+    color: #FFFFFF;
+}
+
+/* 3. Clear & Delete (C, DEL) */
+#main_window button#button_ac,
+#main_window button#button_del {
     background-color: #2B2326;
-    color: #E67E80;
-    font-size: 11pt;
-    font-weight: bold;
     border: 1px solid #483134;
 }
 
-#main_window #button_ac:hover,
-#main_window #button_del:hover {
+#main_window button#button_ac label,
+#main_window button#button_del label {
+    color: #E67E80;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+#main_window button#button_ac:hover,
+#main_window button#button_del:hover {
     background-color: #3C2A2E;
-    color: #FF9FA0;
     border-color: #E67E80;
-    box-shadow: 0 0 8px rgba(230, 126, 128, 0.4);
+}
+
+#main_window button#button_ac:hover label,
+#main_window button#button_del:hover label {
+    color: #FFAAA8;
 }
 
 /* 4. Parentheses, ANS, EXP */
-#main_window #button_brace_open,
-#main_window #button_brace_close,
-#main_window #button_brace_wrap,
-#main_window #button_ans,
-#main_window #button_exp {
+#main_window button#button_brace_open,
+#main_window button#button_brace_close,
+#main_window button#button_brace_wrap,
+#main_window button#button_ans,
+#main_window button#button_exp {
     background-color: #222A2E;
-    color: #83C092;
     border: 1px solid #2F3B41;
 }
 
-#main_window #button_brace_open:hover,
-#main_window #button_brace_close:hover,
-#main_window #button_brace_wrap:hover,
-#main_window #button_ans:hover,
-#main_window #button_exp:hover {
+#main_window button#button_brace_open label,
+#main_window button#button_brace_close label,
+#main_window button#button_brace_wrap label,
+#main_window button#button_ans label,
+#main_window button#button_exp label {
+    color: #83C092;
+    font-weight: bold;
+}
+
+#main_window button#button_brace_open:hover,
+#main_window button#button_brace_close:hover,
+#main_window button#button_brace_wrap:hover,
+#main_window button#button_ans:hover,
+#main_window button#button_exp:hover {
     background-color: #2C373D;
     border-color: #83C092;
-    color: #A7C080;
+}
+
+#main_window button#button_brace_open:hover label,
+#main_window button#button_brace_close:hover label,
+#main_window button#button_brace_wrap:hover label,
+#main_window button#button_ans:hover label,
+#main_window button#button_exp:hover label {
+    color: #FFFFFF;
 }
 
 /* 5. Equals / Calculate Button (Hero Button) */
-#main_window #button_equals {
-    background-image: linear-gradient(135deg, #7FBBB3 0%, #83C092 100%);
-    color: #14181A;
-    font-size: 16pt;
-    font-weight: 900;
+#main_window button#button_equals {
+    background-color: #7FBBB3;
+    background-image: none;
     border: 1px solid #83C092;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(127, 187, 179, 0.4);
 }
 
-#main_window #button_equals:hover {
-    background-image: linear-gradient(135deg, #8FD1C7 0%, #95D4A5 100%);
-    color: #0E1214;
+#main_window button#button_equals label,
+#main_window button#button_equals #label_equals {
+    color: #121816;
+    font-size: 19pt;
+    font-weight: 900;
+}
+
+#main_window button#button_equals:hover {
+    background-color: #83C092;
     border-color: #A7C080;
     box-shadow: 0 3px 12px rgba(127, 187, 179, 0.65);
 }
 
-#main_window #button_equals:active {
-    background-image: linear-gradient(135deg, #6FA69F 0%, #74AA82 100%);
+#main_window button#button_equals:hover label,
+#main_window button#button_equals:hover #label_equals {
+    color: #000000;
 }
 
-/* Navigation arrows (^ v, < >) */
+/* Navigation arrows */
 #main_window #button_move,
-#main_window #button_move2 {
+#main_window #button_move label,
+#main_window #button_move2,
+#main_window #button_move2 label {
     background-color: #222A2E;
     color: #7FBBB3;
     border: 1px solid #2D383E;
 }
 
-/* Statusbar at window bottom */
-#main_window statusbar {
+/* Statusbar */
+#main_window statusbar,
+#main_window statusbar label {
     background-color: #191E21;
     color: #7D8C83;
     border-top: 1px solid #263136;
